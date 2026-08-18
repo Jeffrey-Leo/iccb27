@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 /* ============================================================
    CSS CUSTOM PROPERTIES — Design Tokens
@@ -13,19 +13,19 @@
   /* Core Palette */
   --midnight: #250915;
   --midnight-light: #3a1226;
-  --burgundy: #5C0F1D;
+  --burgundy: #5c0f1d;
   --burgundy-light: #7a1828;
   --cellular-red: #992221;
   --cellular-light: #b5302f;
-  --genomics-blue: #0E2361;
+  --genomics-blue: #0e2361;
   --genomics-light: #1a3485;
-  --molecular-blue: #27539C;
+  --molecular-blue: #27539c;
   --molecular-light: #3468bd;
-  --dna-gold: #D6B24C;
+  --dna-gold: #d6b24c;
   --dna-gold-light: #e8c96a;
   --dna-gold-dark: #b8923a;
-  --ivory: #F8F7F5;
-  --ivory-dark: #EDE9E3;
+  --ivory: #f8f7f5;
+  --ivory-dark: #ede9e3;
   --text-dark: #222222;
   --text-mid: #444444;
   --text-light: #777777;
@@ -33,13 +33,13 @@
   --text-muted: rgba(255, 255, 255, 0.65);
 
   /* Gradients */
-  --grad-hero: linear-gradient(135deg, #250915 0%, #0E2361 40%, #5C0F1D 100%);
+  --grad-hero: linear-gradient(135deg, #250915 0%, #0e2361 40%, #5c0f1d 100%);
   --grad-dark: linear-gradient(180deg, #250915 0%, #1a0b20 100%);
   --grad-card: linear-gradient(135deg, rgba(37, 9, 21, 0.9) 0%, rgba(14, 35, 97, 0.85) 100%);
-  --grad-gold: linear-gradient(135deg, #D6B24C 0%, #b8923a 100%);
-  --grad-red: linear-gradient(135deg, #5C0F1D 0%, #992221 100%);
-  --grad-blue: linear-gradient(135deg, #0E2361 0%, #27539C 100%);
-  --grad-section: linear-gradient(180deg, #0d0618 0%, #250915 50%, #0E2361 100%);
+  --grad-gold: linear-gradient(135deg, #d6b24c 0%, #b8923a 100%);
+  --grad-red: linear-gradient(135deg, #5c0f1d 0%, #992221 100%);
+  --grad-blue: linear-gradient(135deg, #0e2361 0%, #27539c 100%);
+  --grad-section: linear-gradient(180deg, #0d0618 0%, #250915 50%, #0e2361 100%);
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.05);
@@ -59,9 +59,9 @@
   --glow-blue: 0 0 30px rgba(39, 83, 156, 0.5), 0 0 60px rgba(14, 35, 97, 0.3);
 
   /* Typography */
-  --font-heading: 'Space Grotesk', 'Poppins', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-numbers: 'Montserrat', sans-serif;
+  --font-heading: "Space Grotesk", "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-numbers: "Montserrat", sans-serif;
 
   /* Spacing */
   --section-pad: 50px;
@@ -387,8 +387,7 @@ button {
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 70% 65% at 50% 48%,
+  background: radial-gradient(ellipse 70% 65% at 50% 48%,
       rgba(5, 18, 65, 0.05) 0%,
       rgba(3, 8, 35, 0.18) 55%,
       rgba(2, 4, 20, 0.42) 100%);
@@ -411,7 +410,6 @@ button {
   gap: 0;
 }
 
-
 /* ============================================================
    ICCB27 LOGO
    ============================================================ */
@@ -429,8 +427,7 @@ button {
   width: auto;
   display: block;
   object-fit: contain;
-  filter:
-    drop-shadow(0 0 22px rgba(214, 178, 76, 0.20)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 0 22px rgba(214, 178, 76, 0.2)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.35));
 }
 
 /* SVG fallback */
@@ -446,9 +443,7 @@ button {
   margin: 0;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(2.6rem,
-      4.3vw,
-      4.4rem);
+  font-size: clamp(2.6rem, 4.3vw, 4.4rem);
   line-height: 1.08;
   letter-spacing: -0.025em;
   color: var(--text-white);
@@ -477,9 +472,7 @@ button {
   overflow: visible;
   white-space: nowrap;
   border-right: none;
-  background: linear-gradient(135deg,
-      var(--dna-gold),
-      var(--dna-gold-light));
+  background: linear-gradient(135deg, var(--dna-gold), var(--dna-gold-light));
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -497,9 +490,7 @@ button {
   max-width: 900px;
   font-family: var(--font-numbers);
   font-weight: 400;
-  font-size: clamp(1.1rem,
-      1.7vw,
-      1.55rem);
+  font-size: clamp(1.1rem, 1.7vw, 1.55rem);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.88);
   text-align: center;
@@ -523,17 +514,15 @@ button {
   min-width: 720px;
   padding: 5px 0px;
   gap: 0;
-  border: 1px solid rgba(255, 255, 255, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 55px;
   background: rgba(8, 12, 45, 0.48);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow:
-    0 10px 35px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.22);
   animation: fadeInUp 0.8s ease both;
   animation-delay: 0.5s;
 }
-
 
 /* Individual item */
 .hero-meta-item {
@@ -556,16 +545,14 @@ button {
   justify-content: center;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgba(37, 63, 145, 0.90);
+  background: rgba(37, 63, 145, 0.9);
   font-size: 1.2rem;
 }
 
-
 /* Location icon */
 .hero-meta-item:last-child .icon {
-  background: rgba(145, 29, 53, 0.90);
+  background: rgba(145, 29, 53, 0.9);
 }
-
 
 /* Text */
 .hero-meta-item .text {
@@ -731,9 +718,7 @@ button {
   }
 
   .hero-title {
-    font-size: clamp(2.4rem,
-        6vw,
-        3.5rem);
+    font-size: clamp(2.4rem, 6vw, 3.5rem);
   }
 
   .hero-subtitle {
@@ -745,7 +730,6 @@ button {
     min-width: 650px;
   }
 }
-
 
 /* ============================================================
    MOBILE
@@ -763,8 +747,7 @@ button {
 
   .hero-content {
     width: 100%;
-    padding:
-      100px 16px 65px;
+    padding: 100px 16px 65px;
   }
 
   /* Logo */
@@ -786,9 +769,7 @@ button {
 
   /* Title */
   .hero-title {
-    font-size: clamp(2rem,
-        9vw,
-        2.8rem);
+    font-size: clamp(2rem, 9vw, 2.8rem);
     line-height: 1.08;
   }
 
@@ -885,7 +866,7 @@ button {
 }
 
 .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.1);
@@ -971,7 +952,7 @@ button {
 }
 
 .section-blue {
-  background: linear-gradient(180deg, #080f2e 0%, #0E2361 100%);
+  background: linear-gradient(180deg, #080f2e 0%, #0e2361 100%);
 }
 
 .section-light {
@@ -1066,7 +1047,9 @@ button {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal.revealed {
@@ -1077,7 +1060,9 @@ button {
 .reveal-left {
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal-left.revealed {
@@ -1088,7 +1073,9 @@ button {
 .reveal-right {
   opacity: 0;
   transform: translateX(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .reveal-right.revealed {
@@ -1167,7 +1154,7 @@ button {
 }
 
 .stat-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1219,7 +1206,7 @@ button {
 }
 
 .about-visual-main::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(92, 15, 29, 0.3) 0%, rgba(14, 35, 97, 0.4) 100%);
@@ -1315,7 +1302,7 @@ button {
 }
 
 .highlight-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(153, 34, 33, 0.08), rgba(39, 83, 156, 0.08));
@@ -1397,7 +1384,7 @@ button {
 }
 
 .why-card::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1471,7 +1458,7 @@ button {
 }
 
 .theme-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -1px;
   background: linear-gradient(135deg, var(--dna-gold), var(--cellular-red), var(--molecular-blue));
@@ -1554,7 +1541,7 @@ button {
 }
 
 .featured-speaker-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -10%;
@@ -1818,9 +1805,7 @@ button {
   height: 80px;
   border-radius: 50%;
   margin: 0 auto 16px;
-  background: linear-gradient(135deg,
-      var(--burgundy),
-      var(--genomics-blue));
+  background: linear-gradient(135deg, var(--burgundy), var(--genomics-blue));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1858,9 +1843,7 @@ button {
 
 /* Chief Patron */
 .committee-card.chief {
-  background: linear-gradient(135deg,
-      rgba(92, 15, 29, 0.25),
-      rgba(14, 35, 97, 0.2));
+  background: linear-gradient(135deg, rgba(92, 15, 29, 0.25), rgba(14, 35, 97, 0.2));
   border-color: rgba(214, 178, 76, 0.3);
 }
 
@@ -1868,7 +1851,7 @@ button {
    VENUE
    ============================================================ */
 #venue {
-  background: linear-gradient(180deg, #0d0618 0%, #0E2361 100%);
+  background: linear-gradient(180deg, #0d0618 0%, #0e2361 100%);
 }
 
 .venue-grid {
@@ -1999,7 +1982,7 @@ button {
    ABOUT CHENNAI
    ============================================================ */
 #chennai {
-  background: linear-gradient(180deg, #0E2361 0%, #250915 100%);
+  background: linear-gradient(180deg, #0e2361 0%, #250915 100%);
 }
 
 .chennai-grid {
@@ -2131,14 +2114,18 @@ button {
 }
 
 .timeline-container::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 0;
   bottom: 0;
   width: 2px;
   transform: translateX(-50%);
-  background: linear-gradient(to bottom, transparent, rgba(214, 178, 76, 0.5) 10%, rgba(214, 178, 76, 0.5) 90%, transparent);
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(214, 178, 76, 0.5) 10%,
+      rgba(214, 178, 76, 0.5) 90%,
+      transparent);
 }
 
 .timeline-item {
@@ -2349,7 +2336,7 @@ button {
 }
 
 .tier-platinum {
-  background: #E8E8F0;
+  background: #e8e8f0;
   box-shadow: 0 0 8px rgba(232, 232, 240, 0.6);
 }
 
@@ -2359,12 +2346,12 @@ button {
 }
 
 .tier-silver {
-  background: #A8A8B8;
+  background: #a8a8b8;
   box-shadow: 0 0 8px rgba(168, 168, 184, 0.6);
 }
 
 .tier-bronze {
-  background: #CD7F32;
+  background: #cd7f32;
   box-shadow: 0 0 8px rgba(205, 127, 50, 0.6);
 }
 
@@ -2372,13 +2359,13 @@ button {
    REGISTRATION CTA
    ============================================================ */
 #register {
-  background: linear-gradient(135deg, #0E2361 0%, #250915 40%, #5C0F1D 100%);
+  background: linear-gradient(135deg, #0e2361 0%, #250915 40%, #5c0f1d 100%);
   position: relative;
   overflow: hidden;
 }
 
 #register::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -30%;
   left: -10%;
@@ -2389,7 +2376,7 @@ button {
 }
 
 #register::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -30%;
   right: -10%;
@@ -2504,7 +2491,9 @@ button {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding var(--transition-med);
+  transition:
+    max-height 0.4s ease,
+    padding var(--transition-med);
   padding: 0 24px;
 }
 
@@ -2525,7 +2514,7 @@ button {
    CONTACT
    ============================================================ */
 #contact {
-  background: linear-gradient(180deg, var(--midnight) 0%, #0E2361 100%);
+  background: linear-gradient(180deg, var(--midnight) 0%, #0e2361 100%);
 }
 
 .contact-grid {
@@ -2778,7 +2767,7 @@ button {
 }
 
 .footer-col ul li a::before {
-  content: '›';
+  content: "›";
   color: var(--dna-gold);
   font-size: 1rem;
   opacity: 0.6;
@@ -2940,7 +2929,9 @@ button {
   }
 
   50% {
-    box-shadow: 0 0 40px rgba(214, 178, 76, 0.6), 0 0 80px rgba(214, 178, 76, 0.2);
+    box-shadow:
+      0 0 40px rgba(214, 178, 76, 0.6),
+      0 0 80px rgba(214, 178, 76, 0.2);
   }
 }
 
