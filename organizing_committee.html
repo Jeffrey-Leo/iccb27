@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="International Conference on Cancer Biology (ICCB 2027) — Molecular Mechanisms, Genomics & Novel Therapeutics. February 4–6, 2027 at IIT Madras, Chennai, India. Hosted by Hyundai Centre for Cancer Genomics." />
+    <meta name="keywords"
+        content="ICCB 2027, Cancer Biology, IIT Madras, Genomics, Cancer Conference, Precision Medicine, Oncology" />
+    <meta name="author" content="Hyundai Centre for Cancer Genomics, IIT Madras" />
+    <meta property="og:title" content="ICCB 2027 — International Conference on Cancer Biology" />
+    <meta property="og:description"
+        content="Molecular Mechanisms, Genomics & Novel Therapeutics | Feb 4–6, 2027 | IIT Madras, Chennai" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#250915" />
+
+    <title>ICCB 2027 — International Conference on Cancer Biology | IIT Madras</title>
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Favicon SVG inline -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23992221'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-weight='bold'>iC</text></svg>" />
+</head>
+
+<body>
+
+    <!-- ============================================================
+       SCROLL PROGRESS BAR
+       ============================================================ -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#hero" class="nav-logo" aria-label="ICCB 2027 Home">
+                <img src="assets/IIT_Madras_Logo.svg.png" alt="ICCB 2027 Logo" id="nav-logo-img" />
+                <div class="nav-logo-text">
+                    <span class="conf-name">ICCB 2027</span>
+                    <span class="conf-year">IIT Madras</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="nav-links" role="menubar">
+                <a href="./index.html#about" role="menuitem">About</a>
+                <a href="./speakers.html" role="menuitem">Speakers</a>
+                <a href="./index.html#themes" role="menuitem">Themes</a>
+                <a href="#" role="menuitem" id="active">Committee</a>
+                <a href="./index.html#venue" role="menuitem">Venue</a>
+                <a href="./index.html#timeline" role="menuitem">Timeline</a>
+                <!-- <a href="./index.html#sponsors" role="menuitem">Sponsors</a> -->
+                <a href="./index.html#contact" role="menuitem">Contact</a>
+                <a href="./index.html#register" class="nav-cta" role="menuitem" id="nav-register-btn">Register Now</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button class="nav-hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div class="nav-mobile" id="mobile-nav" role="menu" aria-hidden="true">
+            <a href="./index.html#about" role="menuitem">About</a>
+            <a href="./index.html#highlights" role="menuitem">Highlights</a>
+            <a href="#" role="menuitem">Speakers</a>
+            <a href="./index.html#themes" role="menuitem">Themes</a>
+            <a href="./index.html#committee" role="menuitem">Committee</a>
+            <a href="./index.html#venue" role="menuitem">Venue</a>
+            <a href="./index.html#timeline" role="menuitem">Timeline</a>
+            <a href="./index.html#faq" role="menuitem">FAQ</a>
+            <a href="./index.html#contact" role="menuitem">Contact</a>
+            <a href="./index.html#register" class="mob-cta" role="menuitem">Register Now</a>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+       ORGANIZING COMMITTEE
+       ============================================================ -->
+    <section id="committee" class="section" aria-label="Organizing committee">
+        <div class="container">
+            <div class="section-header reveal">
+                <!-- <span class="section-tag">Leadership</span> -->
+                <h2 class="section-title">Organizing <span class="gold">Committee</span></h2>
+                <p class="section-subtitle">Distinguished faculty and scientists guiding ICCB 2027 toward scientific
+                    excellence.
+                </p>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="committee-tabs" role="tablist">
+                <button class="tab-btn active" data-tab="chief-patrons" role="tab" aria-selected="true" id="tab-chief">
+                    Chief Patrons
+                </button>
+                <button class="tab-btn" data-tab="patrons" role="tab" aria-selected="false" id="tab-patrons">
+                    Patrons
+                </button>
+                <button class="tab-btn" data-tab="secretaries" role="tab" aria-selected="false" id="tab-sec">
+                    Organizing Secretaries
+                </button>
+                <button class="tab-btn" data-tab="members" role="tab" aria-selected="false" id="tab-mem">
+                    Committee Members
+                </button>
+            </div>
+
+            <!-- Chief Patrons -->
+            <div class="committee-group">
+                <h3 class="committee-group-title">Chief Patrons</h3>
+                <div class="committee-grid">
+                    <div class="committee-card chief reveal reveal-delay-1">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(214,178,76,0.5)" stroke="rgba(214,178,76,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(214,178,76,0.4)"
+                                    stroke="rgba(214,178,76,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Prof. V. Kamakoti</h4>
+                        <p class="committee-role">Chief Patron</p>
+                        <p class="committee-dept">Director, Indian Institute of Technology Madras</p>
+                    </div>
+                    <div class="committee-card chief reveal reveal-delay-2">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(214,178,76,0.5)" stroke="rgba(214,178,76,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(214,178,76,0.4)"
+                                    stroke="rgba(214,178,76,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Chief Patron TBA</h4>
+                        <p class="committee-role">Chief Patron</p>
+                        <p class="committee-dept">Hyundai Motor India Foundation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patrons -->
+            <div class="committee-group">
+                <h3 class="committee-group-title">Patrons</h3>
+                <div class="committee-grid">
+                    <div class="committee-card reveal reveal-delay-1">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(39,83,156,0.4)"
+                                    stroke="rgba(39,83,156,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Prof. Mahesh Panchagnula</h4>
+                        <p class="committee-role">Patron</p>
+                        <p class="committee-dept">Dean of Research, IIT Madras</p>
+                    </div>
+                    <div class="committee-card reveal reveal-delay-2">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(39,83,156,0.4)"
+                                    stroke="rgba(39,83,156,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Patron TBA</h4>
+                        <p class="committee-role">Patron</p>
+                        <p class="committee-dept">Department of Biotechnology, Govt. of India</p>
+                    </div>
+                    <div class="committee-card reveal reveal-delay-3">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(39,83,156,0.4)"
+                                    stroke="rgba(39,83,156,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Patron TBA</h4>
+                        <p class="committee-role">Patron</p>
+                        <p class="committee-dept">Head, Dept. of Biotechnology, IIT Madras</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organizing Secretaries -->
+            <div class="committee-group">
+                <h3 class="committee-group-title">Organizing Secretaries</h3>
+                <div class="committee-grid">
+                    <div class="committee-card reveal reveal-delay-1">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(153,34,33,0.5)" stroke="rgba(153,34,33,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(153,34,33,0.4)"
+                                    stroke="rgba(153,34,33,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Organizing Secretary TBA</h4>
+                        <p class="committee-role">Organizing Secretary</p>
+                        <p class="committee-dept">Hyundai Centre for Cancer Genomics, IIT Madras</p>
+                    </div>
+                    <div class="committee-card reveal reveal-delay-2">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(153,34,33,0.5)" stroke="rgba(153,34,33,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(153,34,33,0.4)"
+                                    stroke="rgba(153,34,33,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Organizing Secretary TBA</h4>
+                        <p class="committee-role">Organizing Secretary</p>
+                        <p class="committee-dept">National Cancer Tissue Biobank, IIT Madras</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Committee Members -->
+            <div class="committee-group">
+                <h3 class="committee-group-title">Committee Members</h3>
+                <div class="committee-grid">
+                    <div class="committee-card reveal reveal-delay-1">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)"
+                                    stroke="rgba(92,15,29,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Committee Member TBA</h4>
+                        <p class="committee-role">Committee Member</p>
+                        <p class="committee-dept">Dept. of Biotechnology, IIT Madras</p>
+                    </div>
+                    <div class="committee-card reveal reveal-delay-2">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)"
+                                    stroke="rgba(92,15,29,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Committee Member TBA</h4>
+                        <p class="committee-role">Committee Member</p>
+                        <p class="committee-dept">Dept. of Biotechnology, IIT Madras</p>
+                    </div>
+                    <div class="committee-card reveal reveal-delay-3">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)"
+                                    stroke="rgba(92,15,29,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Committee Member TBA</h4>
+                        <p class="committee-role">Committee Member</p>
+                        <p class="committee-dept">Hyundai Centre for Cancer Genomics</p>
+                    </div>
+                    <div class="committee-card reveal reveal-delay-4">
+                        <div class="committee-avatar">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                                    stroke-width="1.2" />
+                                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)"
+                                    stroke="rgba(92,15,29,0.7)" stroke-width="1.2" />
+                            </svg>
+                        </div>
+                        <h4 class="committee-name">Committee Member TBA</h4>
+                        <p class="committee-role">Committee Member</p>
+                        <p class="committee-dept">National Cancer Tissue Biobank</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- divider -->
+    <div class="divider"></div>
+
+    <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+    <footer id="footer" role="contentinfo">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <div class="brand-logo">
+                            <img src="assets/iccb27-logo.png" alt="ICCB 2027 Logo" onerror="this.style.display='none'"
+                                style="height:48px;width:auto;" />
+                        </div>
+                        <p class="brand-name">ICCB 2027</p>
+                        <p class="brand-sub">
+                            International Conference on Cancer Biology<br />
+                            Molecular Mechanisms, Genomics &amp; Novel Therapeutics<br />
+                            February 4–6, 2027 · IIT Madras, Chennai
+                        </p>
+                        <div class="footer-social" role="list">
+                            <a href="#" class="social-btn" aria-label="Twitter/X" role="listitem"
+                                id="footer-twitter">𝕏</a>
+                            <a href="#" class="social-btn" aria-label="LinkedIn" role="listitem"
+                                id="footer-linkedin">in</a>
+                            <a href="#" class="social-btn" aria-label="ResearchGate" role="listitem"
+                                id="footer-rg">Rg</a>
+                            <a href="#" class="social-btn" aria-label="YouTube" role="listitem" id="footer-yt">▶</a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links: Conference -->
+                    <div class="footer-col">
+                        <h4>Conference</h4>
+                        <ul>
+                            <li><a href="#about">About ICCB 2027</a></li>
+                            <li><a href="#highlights">Highlights</a></li>
+                            <li><a href="#themes">Scientific Themes</a></li>
+                            <li><a href="#speakers">Keynote Speakers</a></li>
+                            <li><a href="#timeline">Important Dates</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links: Participate -->
+                    <div class="footer-col">
+                        <h4>Participate</h4>
+                        <ul>
+                            <li><a href="#register">Register Now</a></li>
+                            <li><a href="#register">Submit Abstract</a></li>
+                            <!-- <li><a href="#sponsors">Sponsorship</a></li> -->
+                            <li><a href="#committee">Committee</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links: Information -->
+                    <div class="footer-col">
+                        <h4>Information</h4>
+                        <ul>
+                            <li><a href="#venue">Venue</a></li>
+                            <li><a href="#chennai">About Chennai</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>
+                        Copyright © 2027 All rights reserved | <span>ICCB27</span>
+                    </p>
+                    <p>
+                        Designed with ♥ for <span>ICCB27</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Scroll back to top" title="Back to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+
+</html>

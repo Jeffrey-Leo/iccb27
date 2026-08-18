@@ -51,10 +51,10 @@
         <a href="#about" role="menuitem">About</a>
         <a href="./speakers.html" role="menuitem">Speakers</a>
         <a href="#themes" role="menuitem">Themes</a>
-        <a href="./organizing_committee.html" role="menuitem">Committee</a>
+        <a href="#committee" role="menuitem">Committee</a>
         <a href="#venue" role="menuitem">Venue</a>
         <a href="#timeline" role="menuitem">Timeline</a>
-        <!-- <a href="#sponsors" role="menuitem">Sponsors</a> -->
+        <a href="#sponsors" role="menuitem">Sponsors</a>
         <a href="#contact" role="menuitem">Contact</a>
         <a href="#register" class="nav-cta" role="menuitem" id="nav-register-btn">Register Now</a>
       </div>
@@ -71,7 +71,7 @@
       <a href="#highlights" role="menuitem">Highlights</a>
       <a href="./speakers.html" role="menuitem">Speakers</a>
       <a href="#themes" role="menuitem">Themes</a>
-      <a href="./organizing_committee.html" role="menuitem">Committee</a>
+      <a href="#committee" role="menuitem">Committee</a>
       <a href="#venue" role="menuitem">Venue</a>
       <a href="#timeline" role="menuitem">Timeline</a>
       <a href="#faq" role="menuitem">FAQ</a>
@@ -83,152 +83,96 @@
   <!-- ============================================================
        HERO SECTION
        ============================================================ -->
-  <!-- ============================================================
-     HERO SECTION
-     ============================================================ -->
-  <section id="hero" aria-label="ICCB 2027 Conference Hero">
-    <!-- Background -->
+  <section id="hero" aria-label="Conference hero banner">
     <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-bg-overlay" aria-hidden="true"></div>
 
-    <!-- Hero Content -->
     <div class="hero-content">
-      <!-- ========================================================
-         ICCB27 LOGO
-         ======================================================== -->
-      <div class="hero-logo">
-        <img src="assets/iccb27-logo.webp" alt="ICCB 2027 - International Conference on Cancer Biology"
-          id="hero-logo-img" onerror="
-          this.style.display='none';
-          document.getElementById('hero-logo-svg').style.display='block';
-        " />
+      <!-- Badge -->
+      <!-- <div class="hero-badge" role="note">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        February 4–6, 2027 &nbsp;·&nbsp; IIT Madras, Chennai
+      </div> -->
 
-        <!-- SVG fallback -->
-        <svg id="hero-logo-svg" style="display: none" viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true">
+      <!-- Logo -->
+      <div class="hero-logo">
+        <img src="assets/iccb27-logo.webp" alt="iCCB27 — International Conference on Cancer Biology 2027"
+          id="hero-logo-img"
+          onerror="this.style.display='none';document.getElementById('hero-logo-svg').style.display='block'" />
+        <!-- SVG Fallback Logo -->
+        <svg id="hero-logo-svg" style="display:none;height:100px;width:auto" viewBox="0 0 480 140"
+          xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="logo-red" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#992221" />
               <stop offset="100%" stop-color="#5C0F1D" />
             </linearGradient>
-
-            <linearGradient id="logo-blue" x1="0" y1="0" x2="1" y2="1">
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#0E2361" />
               <stop offset="100%" stop-color="#27539C" />
             </linearGradient>
           </defs>
-
-          <text x="0" y="120" font-family="Space Grotesk, sans-serif" font-weight="900" font-size="130"
-            fill="url(#logo-red)">
-            iCCB
-          </text>
-
-          <text x="290" y="120" font-family="Space Grotesk, sans-serif" font-weight="900" font-size="130"
-            fill="url(#logo-blue)">
-            27
-          </text>
-
+          <text x="0" y="120" font-family="Space Grotesk,sans-serif" font-weight="900" font-size="130"
+            fill="url(#rg)">iCCB</text>
+          <text x="290" y="120" font-family="Space Grotesk,sans-serif" font-weight="900" font-size="130"
+            fill="url(#bg)">27</text>
           <circle cx="15" cy="18" r="14" fill="#27539C" opacity="0.9" />
-
           <circle cx="15" cy="18" r="7" fill="#D6B24C" opacity="0.8" />
         </svg>
       </div>
 
-      <!-- ========================================================
-         MAIN TITLE
-         ======================================================== -->
+      <!-- Main Title -->
       <h1 class="hero-title">
-        <span class="line1"> International Conference on </span>
-
+        <span class="line1">International Conference on</span>
         <span class="typing-wrapper">
-          <span class="typing-text"> Cancer Biology </span>
+          <span class="typing-text">Cancer Biology</span>
         </span>
       </h1>
 
-      <!-- ========================================================
-         CONFERENCE SUBTITLE
-         ======================================================== -->
+      <!-- Subtitle / Theme -->
       <p class="hero-subtitle">
-        <span> Molecular Mechanisms, Genomics &amp; Novel Therapeutics </span>
-
-        <span> A Global Convergence of Cancer Research Excellence </span>
+        Molecular Mechanisms, Genomics &amp; Novel Therapeutics<br />
+        A Global Convergence of Cancer Research Excellence
       </p>
 
-      <!-- ========================================================
-         DATE + LOCATION
-         ======================================================== -->
-      <div class="hero-meta" role="list" aria-label="Conference details">
-        <!-- Date -->
+      <!-- Meta Info Pills -->
+      <div class="hero-meta" role="list">
         <div class="hero-meta-item" role="listitem">
-          <span class="icon" aria-hidden="true"> 📅 </span>
-
-          <div class="text">
-            <strong> February 4–6, 2027 </strong>
-
-            <span> 3 Conference Days </span>
-          </div>
+          <span class="icon" aria-hidden="true">📅</span>
+          <div class="text"><strong>February 4–6, 2027</strong></div>
         </div>
-
-        <!-- Location -->
         <div class="hero-meta-item" role="listitem">
-          <span class="icon" aria-hidden="true"> 📍 </span>
-
-          <div class="text">
-            <strong> IIT Madras </strong>
-
-            <span> Chennai, India </span>
-
-            <small> TTJ Auditorium, ICSR </small>
-          </div>
+          <span class="icon" aria-hidden="true">📍</span>
+          <div class="text"><strong>IIT Madras</strong>, Chennai, India</div>
         </div>
       </div>
 
-      <!-- ========================================================
-         HOST INFORMATION
-         Hidden on the new hero design using CSS.
-         Keeping it here prevents JS/CSS dependency issues.
-         ======================================================== -->
-
+      <!-- Hosted By -->
       <p class="hero-hosted">Hosted by</p>
-
       <p class="hero-host-name">
-        Hyundai Centre for Cancer Genomics &amp; National Cancer Tissue Biobank
-
-        <br />
-
+        Hyundai Centre for Cancer Genomics &amp; National Cancer Tissue Biobank<br />
         Department of Biotechnology, Indian Institute of Technology Madras
       </p>
 
-      <!-- ========================================================
-         HERO ACTIONS
-         Hidden on the new design using CSS.
-         ======================================================== -->
-
+      <!-- CTA Buttons -->
       <div class="hero-actions">
         <a href="#register" class="btn btn-primary btn-lg" id="hero-register-btn">
-          <span class="btn-icon" aria-hidden="true"> ✦ </span>
-
+          <span class="btn-icon" aria-hidden="true">✦</span>
           Register Now
         </a>
-
         <a href="#" class="btn btn-outline btn-lg" id="hero-brochure-btn" aria-label="Download conference brochure">
-          <span class="btn-icon" aria-hidden="true"> ⬇ </span>
-
+          <span class="btn-icon" aria-hidden="true">⬇</span>
           Download Brochure
         </a>
       </div>
     </div>
 
-    <!-- ============================================================
-       SCROLL HINT
-       ============================================================ -->
+    <!-- Scroll Hint -->
     <div class="hero-scroll-hint" aria-hidden="true">
-      <span> Scroll </span>
-
+      <span>Scroll</span>
       <div class="scroll-arrow"></div>
     </div>
   </section>
-
 
   <!-- ============================================================
        ABOUT THE CONFERENCE
@@ -531,6 +475,354 @@
   <div class="divider"></div>
 
   <!-- ============================================================
+       KEYNOTE SPEAKERS
+       ============================================================ -->
+  <section id="speakers" class="section" aria-label="Keynote speakers">
+    <div class="container">
+      <div class="section-header reveal">
+        <!-- <span class="section-tag">Distinguished Faculty</span> -->
+        <h2 class="section-title">Keynote <span class="gold">Speakers</span></h2>
+        <p class="section-subtitle">World-class scientists and clinicians shaping the future of cancer medicine.</p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Featured Speaker -->
+      <div class="speakers-featured reveal">
+        <div class="featured-speaker-card">
+          <!-- <span class="speaker-badge">🌟 Featured Keynote</span> -->
+
+          <div class="speaker-avatar" aria-label="Dr. Keith T. Flaherty portrait">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="28" r="16" fill="rgba(214,178,76,0.4)" stroke="rgba(214,178,76,0.6)"
+                stroke-width="1.5" />
+              <ellipse cx="40" cy="62" rx="24" ry="16" fill="rgba(214,178,76,0.3)" stroke="rgba(214,178,76,0.5)"
+                stroke-width="1.5" />
+              <circle cx="40" cy="28" r="8" fill="rgba(214,178,76,0.6)" />
+            </svg>
+          </div>
+
+          <div class="speaker-info">
+            <h3 class="speaker-name">Dr. Keith T. Flaherty</h3>
+            <p class="speaker-role">MD, FAACR Director of Clinical Research,</p>
+            <p class="speaker-institution">Professor of Medicine, Harvard Medical School,</p>
+            <p class="speaker-country">Boston, Massachusetts, USA.</p>
+            <!-- <p
+              style="font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:20px;max-width:600px;">
+              A pioneer in targeted cancer therapy and precision oncology, Dr. Flaherty is internationally recognized
+              for his landmark research on BRAF-targeted therapies in melanoma and his foundational contributions to the
+              translation of genomic discoveries into clinically approved cancer treatments.
+            </p>
+            <div class="speaker-tags">
+              <span class="speaker-tag">Targeted Therapy</span>
+              <span class="speaker-tag">Melanoma</span>
+              <span class="speaker-tag">BRAF Signaling</span>
+              <span class="speaker-tag">Precision Oncology</span>
+              <span class="speaker-tag">Clinical Genomics</span>
+            </div> -->
+          </div>
+        </div>
+        <div class="featured-speaker-card">
+          <!-- <span class="speaker-badge">🌟 Featured Keynote</span> -->
+
+          <div class="speaker-avatar" aria-label="Dr. Keith T. Flaherty portrait">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="40" cy="28" r="16" fill="rgba(214,178,76,0.4)" stroke="rgba(214,178,76,0.6)"
+                stroke-width="1.5" />
+              <ellipse cx="40" cy="62" rx="24" ry="16" fill="rgba(214,178,76,0.3)" stroke="rgba(214,178,76,0.5)"
+                stroke-width="1.5" />
+              <circle cx="40" cy="28" r="8" fill="rgba(214,178,76,0.6)" />
+            </svg>
+          </div>
+
+          <div class="speaker-info">
+            <h3 class="speaker-name">Dr. Keith T. Flaherty</h3>
+            <p class="speaker-role">MD, FAACR Director of Clinical Research,</p>
+            <p class="speaker-institution">Professor of Medicine, Harvard Medical School,</p>
+            <p class="speaker-country">Boston, Massachusetts, USA.</p>
+            <!-- <p
+              style="font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:20px;max-width:600px;">
+              A pioneer in targeted cancer therapy and precision oncology, Dr. Flaherty is internationally recognized
+              for his landmark research on BRAF-targeted therapies in melanoma and his foundational contributions to the
+              translation of genomic discoveries into clinically approved cancer treatments.
+            </p>
+            <div class="speaker-tags">
+              <span class="speaker-tag">Targeted Therapy</span>
+              <span class="speaker-tag">Melanoma</span>
+              <span class="speaker-tag">BRAF Signaling</span>
+              <span class="speaker-tag">Precision Oncology</span>
+              <span class="speaker-tag">Clinical Genomics</span>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- More Speakers Grid -->
+      <div class="speakers-grid">
+        <div class="speaker-card reveal reveal-delay-1">
+          <div class="avatar-sm" aria-label="Speaker placeholder">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)" stroke-width="1" />
+              <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)" stroke="rgba(39,83,156,0.7)"
+                stroke-width="1" />
+            </svg>
+          </div>
+          <h4 class="s-name">Speaker TBA</h4>
+          <p class="s-role">Keynote Speaker</p>
+          <p class="s-institution">Leading Research Institution</p>
+          <p class="s-country">🌍 International</p>
+        </div>
+        <div class="speaker-card reveal reveal-delay-2">
+          <div class="avatar-sm" aria-label="Speaker placeholder">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="25" cy="18" r="10" fill="rgba(153,34,33,0.5)" stroke="rgba(153,34,33,0.8)" stroke-width="1" />
+              <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(153,34,33,0.4)" stroke="rgba(153,34,33,0.7)"
+                stroke-width="1" />
+            </svg>
+          </div>
+          <h4 class="s-name">Speaker TBA</h4>
+          <p class="s-role">Keynote Speaker</p>
+          <p class="s-institution">Cancer Research Center</p>
+          <p class="s-country">🌍 International</p>
+        </div>
+        <div class="speaker-card reveal reveal-delay-3">
+          <div class="avatar-sm" aria-label="Speaker placeholder">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="25" cy="18" r="10" fill="rgba(214,178,76,0.5)" stroke="rgba(214,178,76,0.8)"
+                stroke-width="1" />
+              <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(214,178,76,0.4)" stroke="rgba(214,178,76,0.7)"
+                stroke-width="1" />
+            </svg>
+          </div>
+          <h4 class="s-name">Speaker TBA</h4>
+          <p class="s-role">Invited Speaker</p>
+          <p class="s-institution">University of Excellence</p>
+          <p class="s-country">🌍 International</p>
+        </div>
+        <div class="speaker-card reveal reveal-delay-4">
+          <div class="avatar-sm" aria-label="Speaker placeholder">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)" stroke-width="1" />
+              <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)" stroke="rgba(39,83,156,0.7)"
+                stroke-width="1" />
+            </svg>
+          </div>
+          <h4 class="s-name">Speaker TBA</h4>
+          <p class="s-role">Invited Speaker</p>
+          <p class="s-institution">Research Hospital</p>
+          <p class="s-country">🌏 Asia Pacific</p>
+        </div>
+      </div>
+
+      <!-- <div class="more-speakers-note reveal">
+        <p>Additional keynote and invited speakers will be announced progressively. Stay tuned for speaker updates.</p>
+        <a href="#contact" class="btn btn-outline" id="speaker-nominate-btn">
+          <span class="btn-icon">✉</span>
+          Suggest a Speaker
+        </a>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- divider -->
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       ORGANIZING COMMITTEE
+       ============================================================ -->
+  <section id="committee" class="section" aria-label="Organizing committee">
+    <div class="container">
+      <div class="section-header reveal">
+        <!-- <span class="section-tag">Leadership</span> -->
+        <h2 class="section-title">Organizing <span class="gold">Committee</span></h2>
+        <p class="section-subtitle">Distinguished faculty and scientists guiding ICCB 2027 toward scientific excellence.
+        </p>
+        <div class="section-divider"></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="committee-tabs" role="tablist">
+        <button class="tab-btn active" data-tab="chief-patrons" role="tab" aria-selected="true" id="tab-chief">Chief
+          Patrons</button>
+        <button class="tab-btn" data-tab="patrons" role="tab" aria-selected="false" id="tab-patrons">Patrons</button>
+        <button class="tab-btn" data-tab="secretaries" role="tab" aria-selected="false" id="tab-sec">Organizing
+          Secretaries</button>
+        <button class="tab-btn" data-tab="members" role="tab" aria-selected="false" id="tab-mem">Committee
+          Members</button>
+      </div>
+
+      <!-- Chief Patrons -->
+      <div class="tab-content active" id="chief-patrons" role="tabpanel" aria-labelledby="tab-chief">
+        <div class="committee-grid">
+          <div class="committee-card chief reveal reveal-delay-1">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(214,178,76,0.5)" stroke="rgba(214,178,76,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(214,178,76,0.4)" stroke="rgba(214,178,76,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Prof. V. Kamakoti</h4>
+            <p class="committee-role">Chief Patron</p>
+            <p class="committee-dept">Director, Indian Institute of Technology Madras</p>
+          </div>
+          <div class="committee-card chief reveal reveal-delay-2">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(214,178,76,0.5)" stroke="rgba(214,178,76,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(214,178,76,0.4)" stroke="rgba(214,178,76,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Chief Patron TBA</h4>
+            <p class="committee-role">Chief Patron</p>
+            <p class="committee-dept">Hyundai Motor India Foundation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patrons -->
+      <div class="tab-content" id="patrons" role="tabpanel" aria-labelledby="tab-patrons">
+        <div class="committee-grid">
+          <div class="committee-card reveal reveal-delay-1">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(39,83,156,0.4)" stroke="rgba(39,83,156,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Prof. Mahesh Panchagnula</h4>
+            <p class="committee-role">Patron</p>
+            <p class="committee-dept">Dean of Research, IIT Madras</p>
+          </div>
+          <div class="committee-card reveal reveal-delay-2">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(39,83,156,0.4)" stroke="rgba(39,83,156,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Patron TBA</h4>
+            <p class="committee-role">Patron</p>
+            <p class="committee-dept">Department of Biotechnology, Govt. of India</p>
+          </div>
+          <div class="committee-card reveal reveal-delay-3">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(39,83,156,0.4)" stroke="rgba(39,83,156,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Patron TBA</h4>
+            <p class="committee-role">Patron</p>
+            <p class="committee-dept">Head, Dept. of Biotechnology, IIT Madras</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organizing Secretaries -->
+      <div class="tab-content" id="secretaries" role="tabpanel" aria-labelledby="tab-sec">
+        <div class="committee-grid">
+          <div class="committee-card reveal reveal-delay-1">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(153,34,33,0.5)" stroke="rgba(153,34,33,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(153,34,33,0.4)" stroke="rgba(153,34,33,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Organizing Secretary TBA</h4>
+            <p class="committee-role">Organizing Secretary</p>
+            <p class="committee-dept">Hyundai Centre for Cancer Genomics, IIT Madras</p>
+          </div>
+          <div class="committee-card reveal reveal-delay-2">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(153,34,33,0.5)" stroke="rgba(153,34,33,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(153,34,33,0.4)" stroke="rgba(153,34,33,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Organizing Secretary TBA</h4>
+            <p class="committee-role">Organizing Secretary</p>
+            <p class="committee-dept">National Cancer Tissue Biobank, IIT Madras</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Committee Members -->
+      <div class="tab-content" id="members" role="tabpanel" aria-labelledby="tab-mem">
+        <div class="committee-grid">
+          <div class="committee-card reveal reveal-delay-1">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)" stroke="rgba(92,15,29,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Committee Member TBA</h4>
+            <p class="committee-role">Committee Member</p>
+            <p class="committee-dept">Dept. of Biotechnology, IIT Madras</p>
+          </div>
+          <div class="committee-card reveal reveal-delay-2">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)" stroke="rgba(92,15,29,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Committee Member TBA</h4>
+            <p class="committee-role">Committee Member</p>
+            <p class="committee-dept">Dept. of Biotechnology, IIT Madras</p>
+          </div>
+          <div class="committee-card reveal reveal-delay-3">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)" stroke="rgba(92,15,29,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Committee Member TBA</h4>
+            <p class="committee-role">Committee Member</p>
+            <p class="committee-dept">Hyundai Centre for Cancer Genomics</p>
+          </div>
+          <div class="committee-card reveal reveal-delay-4">
+            <div class="committee-avatar">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="20" cy="14" r="8" fill="rgba(92,15,29,0.5)" stroke="rgba(92,15,29,0.8)"
+                  stroke-width="1.2" />
+                <ellipse cx="20" cy="32" rx="12" ry="8" fill="rgba(92,15,29,0.4)" stroke="rgba(92,15,29,0.7)"
+                  stroke-width="1.2" />
+              </svg>
+            </div>
+            <h4 class="committee-name">Committee Member TBA</h4>
+            <p class="committee-role">Committee Member</p>
+            <p class="committee-dept">National Cancer Tissue Biobank</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- divider -->
+  <div class="divider"></div>
+
+  <!-- ============================================================
        CONFERENCE VENUE
        ============================================================ -->
   <section id="venue" class="section" aria-label="Conference venue">
@@ -607,123 +899,89 @@
   <div class="divider"></div>
 
   <!-- ============================================================
-     ABOUT CHENNAI
-     ============================================================ -->
+       ABOUT CHENNAI
+       ============================================================ -->
   <section id="chennai" class="section" aria-label="About Chennai">
     <div class="container">
-      <!-- Section Header -->
       <div class="section-header reveal">
-        <h2 class="section-title">
-          The City of
-          <span class="gold">Heritage &amp; Culture</span>
-        </h2>
-        <p class="section-subtitle">
-          Chennai — India's gateway to South Asia — offers a rich tapestry of culture, cuisine, history, and coastal
-          beauty.
-        </p>
+        <!-- <span class="section-tag">Explore Chennai</span> -->
+        <h2 class="section-title">The City of <span class="gold">Heritage &amp; Culture</span></h2>
+        <p class="section-subtitle">Chennai — India's gateway to South Asia — offers a rich tapestry of culture,
+          cuisine, and coastal beauty.</p>
         <div class="section-divider"></div>
       </div>
 
-      <!-- ========================================================
-         HERITAGE PLACES
-         ======================================================== -->
       <div class="chennai-grid">
-        <!-- Marina Beach -->
         <div class="chennai-card reveal reveal-delay-1">
-          <div class="chennai-card-bg" style="
-                  background-image: url(&quot;./assets/About_Chennai/Marina_Beach.png&quot;);
-                  background-size: cover;
-                  background-position: center;
-               " aria-hidden="true"></div>
+          <div class="chennai-card-bg" style="background: linear-gradient(135deg, #0E2361, #27539C, #1a4080);"
+            aria-hidden="true"></div>
           <div class="chennai-card-overlay" aria-hidden="true"></div>
           <div class="chennai-card-content">
+            <div class="chennai-card-emoji" aria-hidden="true">🏖️</div>
             <h3 class="chennai-card-title">Marina Beach</h3>
-            <p class="chennai-card-desc">
-              One of India's most iconic beaches, stretching along the Bay of Bengal and offering a spectacular
-              Chennai coastal experience.
-            </p>
+            <p class="chennai-card-desc">World's second-longest urban beach — a breathtaking 13 km of golden sands along
+              the Bay of Bengal.</p>
           </div>
         </div>
 
-        <!-- San Thome Basilica -->
         <div class="chennai-card reveal reveal-delay-2">
-          <div class="chennai-card-bg" style="
-                  background-image: url(&quot;./assets/About_Chennai/San_Thome_Basilica.png&quot;);
-                  background-size: cover;
-                  background-position: center;
-               " aria-hidden="true"></div>
+          <div class="chennai-card-bg" style="background: linear-gradient(135deg, #5C0F1D, #992221, #c04030);"
+            aria-hidden="true"></div>
           <div class="chennai-card-overlay" aria-hidden="true"></div>
           <div class="chennai-card-content">
-            <h3 class="chennai-card-title">San Thome Basilica</h3>
-            <p class="chennai-card-desc">
-              A historic Neo-Gothic basilica in Mylapore, built over the traditional tomb of St. Thomas the Apostle
-              and an important landmark of Chennai.
-            </p>
-          </div>
-        </div>
-
-        <!-- DAKSHINACHITRA HERITAGE MUSEUM  -->
-        <div class="chennai-card reveal reveal-delay-5">
-          <div class="chennai-card-bg" style="
-                  background-image: url(&quot;./assets/About_Chennai/DakshinaChitra_Heritage_Museum.png&quot;);
-                  background-size: cover;
-                  background-position: center;
-               " aria-hidden="true"></div>
-          <div class="chennai-card-overlay" aria-hidden="true"></div>
-          <div class="chennai-card-content">
-            <h3 class="chennai-card-title">DakshinaChitra Heritage Museum</h3>
-            <p class="chennai-card-desc">
-              A living heritage museum showcasing the traditional architecture, crafts, arts, and lifestyles of
-              South India.
-            </p>
-          </div>
-        </div>
-
-        <!-- Mahabalipuram -->
-        <div class="chennai-card reveal reveal-delay-4">
-          <div class="chennai-card-bg" style="
-                  background-image: url(&quot;./assets/About_Chennai/Mahabalipuram.png&quot;);
-                  background-size: cover;
-                  background-position: center;
-               " aria-hidden="true"></div>
-          <div class="chennai-card-overlay" aria-hidden="true"></div>
-          <div class="chennai-card-content">
+            <div class="chennai-card-emoji" aria-hidden="true">🗿</div>
             <h3 class="chennai-card-title">Mahabalipuram</h3>
-            <p class="chennai-card-desc">
-              A UNESCO World Heritage Site renowned for its ancient rock-cut temples, monuments and magnificent
-              Shore Temple along the Coromandel Coast.
-            </p>
+            <p class="chennai-card-desc">UNESCO World Heritage Site with magnificent 7th-century rock-cut temples and
+              shore temples just 60 km from Chennai.</p>
+          </div>
+        </div>
+
+        <div class="chennai-card reveal reveal-delay-3">
+          <div class="chennai-card-bg" style="background: linear-gradient(135deg, #250915, #5C0F1D, #3a1226);"
+            aria-hidden="true"></div>
+          <div class="chennai-card-overlay" aria-hidden="true"></div>
+          <div class="chennai-card-content">
+            <div class="chennai-card-emoji" aria-hidden="true">🛕</div>
+            <h3 class="chennai-card-title">Kapaleeshwarar Temple</h3>
+            <p class="chennai-card-desc">A stunning 7th-century Dravidian-style Shiva temple in Mylapore, emblematic of
+              Chennai's deep cultural heritage.</p>
+          </div>
+        </div>
+
+        <div class="chennai-card reveal reveal-delay-4">
+          <div class="chennai-card-bg" style="background: linear-gradient(135deg, #1a4020, #2a6030, #0E2361);"
+            aria-hidden="true"></div>
+          <div class="chennai-card-overlay" aria-hidden="true"></div>
+          <div class="chennai-card-content">
+            <div class="chennai-card-emoji" aria-hidden="true">🌳</div>
+            <h3 class="chennai-card-title">IIT Madras Campus</h3>
+            <p class="chennai-card-desc">A forested sanctuary with spotted deer, peacocks, and bonnet macaques — a truly
+              unique academic environment.</p>
           </div>
         </div>
       </div>
 
-      <!-- ========================================================
-         WEATHER INFO
-         ======================================================== -->
+      <!-- Weather Info -->
       <div class="chennai-weather reveal">
         <div>
           <h3>☀️ Perfect February Weather</h3>
-          <p>
-            February is one of the most pleasant months to visit Chennai. With warm sunny days, cool sea breezes, and
-            minimal rainfall, delegates can comfortably explore the city's attractions and enjoy the beautiful IIT
-            Madras campus.
-          </p>
+          <p>February is one of the most pleasant months to visit Chennai. With warm sunny days, cool sea breezes, and
+            minimal rainfall, delegates can fully enjoy the city's attractions and the beautiful IIT Madras campus. The
+            city's world-class connectivity — direct flights from major international hubs — makes it easily accessible
+            for global attendees.</p>
         </div>
-
         <div class="weather-stats">
           <div class="weather-stat">
-            <span class="w-value"> 28° </span>
-            <span class="w-unit"> Avg. High (°C) </span>
+            <span class="w-value">28°</span>
+            <span class="w-unit">Avg. High (°C)</span>
           </div>
-
           <div class="weather-stat">
-            <span class="w-value"> 22° </span>
-            <span class="w-unit"> Avg. Low (°C) </span>
+            <span class="w-value">22°</span>
+            <span class="w-unit">Avg. Low (°C)</span>
           </div>
-
           <div class="weather-stat">
-            <span class="w-value"> Low </span>
-            <span class="w-unit"> Rainfall </span>
+            <span class="w-value">Low</span>
+            <span class="w-unit">Rainfall</span>
           </div>
         </div>
       </div>
@@ -831,21 +1089,21 @@
 
   <!-- ============================================================
        SPONSORS
-       ============================================================ --
+       ============================================================ -->
   <section id="sponsors" class="section" aria-label="Conference sponsors">
     <div class="container">
       <div class="section-header reveal">
-        !-- <span class="section-tag">Our Partners</span> --
+        <!-- <span class="section-tag">Our Partners</span> -->
         <h2 class="section-title">Sponsors &amp; <span class="gold">Partners</span></h2>
         <p class="section-subtitle">ICCB 2027 is made possible through the generous support of leading organizations in
           research, healthcare, and industry.</p>
         <div class="section-divider"></div>
       </div>
 
-      !-- Auto-scrolling carousel --
+      <!-- Auto-scrolling carousel -->
       <div class="sponsors-carousel-wrapper" aria-label="Sponsor logos carousel">
         <div class="sponsors-track" id="sponsors-track">
-          !-- Original items --
+          <!-- Original items -->
           <div class="sponsor-logo">
             <div class="s-icon" aria-hidden="true">🏛️</div>
             <div class="s-name">IIT Madras</div>
@@ -886,7 +1144,7 @@
             <div class="s-name">Research Org.</div>
             <div class="s-type">Associate Partner</div>
           </div>
-          !-- Duplicated for infinite scroll --
+          <!-- Duplicated for infinite scroll -->
           <div class="sponsor-logo">
             <div class="s-icon" aria-hidden="true">🏛️</div>
             <div class="s-name">IIT Madras</div>
@@ -930,7 +1188,7 @@
         </div>
       </div>
 
-      !-- Sponsorship Tiers --
+      <!-- Sponsorship Tiers -->
       <div class="sponsors-tiers reveal">
         <h3>Sponsorship Opportunities</h3>
         <div class="sponsor-tier-grid">
@@ -957,7 +1215,7 @@
         </div>
       </div>
     </div>
-  </section>-->
+  </section>
 
   <!-- divider -->
   <div class="divider"></div>
@@ -1148,14 +1406,14 @@
               </div>
             </div>
 
-            <!-- <div class="contact-item">
+            <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">🌐</div>
               <div class="contact-text">
                 <p class="c-label">Website</p>
                 <p class="c-value"><a href="https://hccg.iitm.ac.in" target="_blank" rel="noopener">hccg.iitm.ac.in</a>
                 </p>
               </div>
-            </div> -->
+            </div>
 
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">📞</div>
@@ -1194,7 +1452,7 @@
                 <option value="">Select an enquiry type...</option>
                 <option value="registration">Registration</option>
                 <option value="abstract">Abstract Submission</option>
-                <!-- <option value="sponsorship">Sponsorship</option> -->
+                <option value="sponsorship">Sponsorship</option>
                 <option value="accommodation">Accommodation</option>
                 <option value="speaker">Speaker Nomination</option>
                 <option value="visa">Visa Support Letter</option>
@@ -1265,8 +1523,8 @@
             <ul>
               <li><a href="#register">Register Now</a></li>
               <li><a href="#register">Submit Abstract</a></li>
-              <!-- <li><a href="#sponsors">Sponsorship</a></li> -->
-              <li><a href="./organizing_committee.html">Committee</a></li>
+              <li><a href="#sponsors">Sponsorship</a></li>
+              <li><a href="#committee">Committee</a></li>
               <li><a href="#faq">FAQs</a></li>
             </ul>
           </div>

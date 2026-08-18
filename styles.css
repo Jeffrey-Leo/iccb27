@@ -249,7 +249,8 @@ button {
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.active,
+.nav-links a#active {
   color: var(--dna-gold);
   background: rgba(214, 178, 76, 0.1);
 }
@@ -354,11 +355,13 @@ button {
 }
 
 /* ============================================================
-   HERO SECTION
+   HERO SECTION — ICCB 2027 NEW DESIGN
    ============================================================ */
+
 #hero {
   position: relative;
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,103 +369,114 @@ button {
   background: var(--grad-hero);
 }
 
+/* ============================================================
+   HERO BACKGROUND
+   ============================================================ */
 #hero-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.7;
+  opacity: 0.85;
   background-image: url(./assets/hero_bg1.png);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, transparent 20%, rgba(37, 9, 21, 0.5) 100%);
+  background:
+    radial-gradient(ellipse 70% 65% at 50% 48%,
+      rgba(5, 18, 65, 0.05) 0%,
+      rgba(3, 8, 35, 0.18) 55%,
+      rgba(2, 4, 20, 0.42) 100%);
   pointer-events: none;
 }
 
+/* ============================================================
+   HERO CONTENT
+   ============================================================ */
 .hero-content {
   position: relative;
   z-index: 10;
+  width: min(1250px, 92%);
+  padding: 105px 20px 55px;
+  margin: 0 auto;
   text-align: center;
-  max-width: 1000px;
-  padding: 120px 24px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(214, 178, 76, 0.15);
-  border: 1px solid rgba(214, 178, 76, 0.4);
-  border-radius: 50px;
-  padding: 8px 20px;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--dna-gold);
-  margin-bottom: 28px;
-  animation: fadeInDown 0.8s ease both;
-  animation-delay: 0.1s;
-}
 
-.hero-badge-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--dna-gold);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-
+/* ============================================================
+   ICCB27 LOGO
+   ============================================================ */
 .hero-logo {
-  margin-bottom: 32px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   animation: fadeInDown 0.8s ease both;
-  animation-delay: 0.2s;
+  animation-delay: 0.15s;
 }
 
 .hero-logo img {
-  height: 100px;
+  height: 150px;
   width: auto;
-  filter: drop-shadow(0 0 25px rgba(214, 178, 76, 0.25));
-  /* animation: logoFloat 4s ease-in-out infinite; */
+  display: block;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 22px rgba(214, 178, 76, 0.20)) drop-shadow(0 10px 25px rgba(0, 0, 0, 0.35));
 }
 
+/* SVG fallback */
+#hero-logo-svg {
+  height: 190px !important;
+  width: auto !important;
+}
+
+/* ============================================================
+   MAIN TITLE
+   ============================================================ */
 .hero-title {
+  margin: 0;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: clamp(2rem, 4.5vw, 4rem);
-  line-height: 1.15;
-  letter-spacing: -.02em;
+  font-size: clamp(2.6rem,
+      4.3vw,
+      4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
   color: var(--text-white);
+  text-align: center;
 }
 
+/* International Conference on */
 .line1 {
   display: block;
-  opacity: 0;
   transform: translateY(30px);
-  animation: fadeUp .8s ease forwards;
+  animation: fadeUp 0.8s ease forwards;
+  padding-bottom: 25px;
 }
 
-/* ---------------------------- */
-
+/* ============================================================
+   CANCER BIOLOGY
+   ============================================================ */
 .typing-wrapper {
   display: inline-block;
+  margin-top: 5px;
 }
 
 .typing-text {
   display: inline-block;
-  overflow: hidden;
+  width: auto;
+  overflow: visible;
   white-space: nowrap;
-
+  border-right: none;
   background: linear-gradient(135deg,
       var(--dna-gold),
       var(--dna-gold-light));
@@ -471,120 +485,98 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  width: 0;
-  border-right: 3px solid var(--dna-gold);
-
-  animation:
-    typingLoop 8s steps(14, end) infinite,
-    blinkCursor .8s step-end infinite;
+  /* Disable typing animation for new static design */
+  animation: none;
 }
 
-/* Typing → Pause → Delete → Pause */
-
-@keyframes typingLoop {
-  0% {
-    width: 0;
-  }
-
-  30% {
-    width: 13ch;
-  }
-
-  60% {
-    width: 13ch;
-  }
-
-  90% {
-    width: 0;
-  }
-
-  100% {
-    width: 0;
-  }
-}
-
-/* Cursor */
-
-@keyframes blinkCursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* ------------------------------------ */
-/* Fade up */
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Typing */
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 15ch;
-  }
-}
-
-/* Cursor */
-
-@keyframes cursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
+/* ============================================================
+   SUBTITLE
+   ============================================================ */
 .hero-subtitle {
-  font-family: var(--font-body);
+  margin: 24px 0 0;
+  max-width: 900px;
+  font-family: var(--font-numbers);
   font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.35rem);
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 40px;
-  max-width: 680px;
-  line-height: 1.6;
+  font-size: clamp(1.1rem,
+      1.7vw,
+      1.55rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  text-align: center;
   animation: fadeInUp 0.8s ease both;
   animation-delay: 0.4s;
 }
 
+.hero-subtitle br {
+  display: block;
+}
+
+/* ============================================================
+   DATE + LOCATION META
+   ============================================================ */
 .hero-meta {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 24px;
-  margin-bottom: 52px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  min-width: 720px;
+  padding: 5px 0px;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-radius: 55px;
+  background: rgba(8, 12, 45, 0.48);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.22);
   animation: fadeInUp 0.8s ease both;
   animation-delay: 0.5s;
 }
 
+
+/* Individual item */
 .hero-meta-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 50px;
-  padding: 10px 20px;
-  backdrop-filter: blur(10px);
+  gap: 12px;
+  padding: 8px 24px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  backdrop-filter: none;
 }
 
+/* Icon */
 .hero-meta-item .icon {
-  font-size: 1.1rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(37, 63, 145, 0.90);
+  font-size: 1.2rem;
 }
 
+
+/* Location icon */
+.hero-meta-item:last-child .icon {
+  background: rgba(145, 29, 53, 0.90);
+}
+
+
+/* Text */
 .hero-meta-item .text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
 }
 
 .hero-meta-item .text strong {
@@ -592,61 +584,285 @@ button {
   font-weight: 700;
 }
 
-.hero-hosted {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-  animation: fadeInUp 0.8s ease both;
-  animation-delay: 0.55s;
+/* ============================================================
+   DIVIDER BETWEEN DATE AND LOCATION
+   ============================================================ */
+.hero-meta-item+.hero-meta-item {
+  position: relative;
 }
 
+.hero-meta-item+.hero-meta-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 50px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================================
+   HIDE HOSTED BY FROM HERO
+   ============================================================ */
+.hero-hosted,
 .hero-host-name {
-  font-family: var(--font-heading);
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 48px;
-  line-height: 1.5;
-  animation: fadeInUp 0.8s ease both;
-  animation-delay: 0.6s;
+  display: none;
 }
 
+/* ============================================================
+   HIDE HERO CTA BUTTONS
+   ============================================================ */
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  animation: fadeInUp 0.8s ease both;
-  animation-delay: 0.7s;
+  display: none;
 }
 
+/* ============================================================
+   SCROLL HINT
+   ============================================================ */
 .hero-scroll-hint {
   position: absolute;
-  bottom: 36px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 15;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  animation: fadeInUp 1s ease both, scrollBounce 2s 1.5s ease-in-out infinite;
+  animation:
+    fadeInUp 1s ease both,
+    scrollBounce 2s 1.5s ease-in-out infinite;
 }
 
 .hero-scroll-hint span {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
 }
 
 .scroll-arrow {
-  width: 22px;
-  height: 22px;
-  border-right: 2px solid rgba(214, 178, 76, 0.5);
-  border-bottom: 2px solid rgba(214, 178, 76, 0.5);
+  width: 18px;
+  height: 18px;
+  border-right: 2px solid rgba(214, 178, 76, 0.55);
+  border-bottom: 2px solid rgba(214, 178, 76, 0.55);
   transform: rotate(45deg);
+}
+
+/* ============================================================
+   DESKTOP — 1400px+
+   ============================================================ */
+@media (min-width: 1400px) {
+  .hero-content {
+    width: 1300px;
+    padding-top: 90px;
+  }
+
+  .hero-logo img {
+    height: 150px;
+  }
+
+  #hero-logo-svg {
+    height: 210px !important;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.55rem;
+
+    max-width: 950px;
+  }
+
+  .hero-meta {
+    min-width: 760px;
+  }
+}
+
+/* ============================================================
+   LAPTOP — 1024px to 1399px
+   ============================================================ */
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .hero-content {
+    padding-top: 95px;
+  }
+
+  .hero-logo img {
+    height: 150px;
+  }
+
+  #hero-logo-svg {
+    height: 175px !important;
+  }
+
+  .hero-title {
+    font-size: 3.8rem;
+  }
+
+  .hero-meta {
+    min-width: 700px;
+  }
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+@media (max-width: 1023px) {
+  #hero {
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .hero-content {
+    width: 94%;
+    padding-top: 110px;
+    padding-bottom: 70px;
+  }
+
+  .hero-logo img {
+    height: 135px;
+  }
+
+  #hero-logo-svg {
+    height: 145px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem,
+        6vw,
+        3.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 750px;
+  }
+
+  .hero-meta {
+    min-width: 650px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  #hero {
+    min-height: 100svh;
+    height: auto;
+  }
+
+  #hero-canvas {
+    background-position: center center;
+  }
+
+  .hero-content {
+    width: 100%;
+    padding:
+      100px 16px 65px;
+  }
+
+  /* Logo */
+  .hero-logo {
+    margin-bottom: 15px;
+  }
+
+  .hero-logo img {
+    width: 300px;
+    max-width: 82vw;
+    height: auto;
+  }
+
+  #hero-logo-svg {
+    width: 300px !important;
+    max-width: 82vw;
+    height: auto !important;
+  }
+
+  /* Title */
+  .hero-title {
+    font-size: clamp(2rem,
+        9vw,
+        2.8rem);
+    line-height: 1.08;
+  }
+
+  .typing-wrapper {
+    margin-top: 3px;
+  }
+
+  /* Subtitle */
+  .hero-subtitle {
+    margin-top: 18px;
+    padding: 0 8px;
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  /* Meta */
+  .hero-meta {
+    width: calc(100% - 20px);
+    min-width: 0;
+    margin-top: 25px;
+    padding: 8px 12px;
+    flex-direction: column;
+    border-radius: 28px;
+  }
+
+  .hero-meta-item {
+    width: 100%;
+    padding: 9px 5px;
+    justify-content: flex-start;
+  }
+
+  .hero-meta-item+.hero-meta-item::before {
+    display: none;
+  }
+
+  .hero-meta-item .text {
+    font-size: 0.85rem;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .hero-meta-item .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  /* Scroll */
+  .hero-scroll-hint {
+    display: none;
+  }
+
+  .hero-meta-item .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .hero-meta-item .text strong {
+    color: var(--dna-gold);
+    font-weight: 700;
+  }
+
+  .hero-meta-item .text span,
+  .hero-meta-item .text small {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+  }
+
+  .hero-meta-item .text small {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 
 /* ============================================================
@@ -736,6 +952,11 @@ button {
 /* ============================================================
    SECTION UTILITIES
    ============================================================ */
+/* Prevent fixed header from covering anchor sections */
+.section[id] {
+  scroll-margin-top: 80px;
+}
+
 .section {
   padding: var(--section-pad) 0;
   position: relative;
@@ -770,7 +991,7 @@ button {
 
 .section-header {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 25px;
 }
 
 .section-tag {
@@ -1308,6 +1529,7 @@ button {
    ============================================================ */
 #speakers {
   background: linear-gradient(180deg, #0d0618 0%, #250915 100%);
+  padding-top: 7rem;
 }
 
 .speakers-featured {
@@ -1424,7 +1646,7 @@ button {
 
 .speakers-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
 }
 
@@ -1432,7 +1654,7 @@ button {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
-  padding: 32px 24px;
+  padding: 25px 18px;
   text-align: center;
   transition: all var(--transition-med);
   position: relative;
@@ -1475,7 +1697,7 @@ button {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--text-white);
+  color: var(--dna-gold);
   margin-bottom: 6px;
 }
 
@@ -1512,62 +1734,70 @@ button {
   margin-bottom: 16px;
 }
 
+.country-flag {
+  width: 13px;
+  height: auto;
+  object-fit: cover;
+  display: inline-block;
+  vertical-align: -1px;
+  margin-right: 5px;
+  border-radius: 1px;
+  opacity: 0.7;
+}
+
 /* ============================================================
    ORGANIZING COMMITTEE
    ============================================================ */
+
 #committee {
-  background: linear-gradient(180deg, #250915 0%, #0d0618 100%);
+  background: linear-gradient(180deg, #0d0618 0%, #250915 100%);
+  padding-top: 7rem;
 }
 
-.committee-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 52px;
+/* Committee Category */
+.committee-group {
+  margin-bottom: 70px;
 }
 
-.tab-btn {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 10px 24px;
-  border-radius: 50px;
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
-  background: transparent;
-  transition: all var(--transition-fast);
-  cursor: pointer;
-  letter-spacing: 0.03em;
+.committee-group:last-child {
+  margin-bottom: 0;
 }
 
-.tab-btn:hover {
-  color: var(--text-white);
-  border-color: rgba(214, 178, 76, 0.3);
-}
-
-.tab-btn.active {
-  background: linear-gradient(135deg, rgba(214, 178, 76, 0.2), rgba(153, 34, 33, 0.15));
-  border-color: rgba(214, 178, 76, 0.5);
+.committee-group-title {
+  position: relative;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--dna-gold);
-  box-shadow: var(--shadow-gold);
+  margin: 0 0 32px;
+  padding-bottom: 14px;
 }
 
-.tab-content {
-  display: none;
+.committee-group-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  transform: translateX(-50%);
+  background: var(--dna-gold);
+  border-radius: 10px;
 }
 
-.tab-content.active {
-  display: block;
-}
-
+/* Committee Grid */
 .committee-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
   gap: 24px;
+  justify-content: center;
 }
 
+/* Committee Card */
 .committee-card {
+  width: 100%;
+  box-sizing: border-box;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
@@ -1582,12 +1812,15 @@ button {
   background: rgba(214, 178, 76, 0.04);
 }
 
+/* Avatar */
 .committee-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin: 0 auto 16px;
-  background: linear-gradient(135deg, var(--burgundy), var(--genomics-blue));
+  background: linear-gradient(135deg,
+      var(--burgundy),
+      var(--genomics-blue));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1623,9 +1856,11 @@ button {
   line-height: 1.4;
 }
 
-/* Chief Patron special styling */
+/* Chief Patron */
 .committee-card.chief {
-  background: linear-gradient(135deg, rgba(92, 15, 29, 0.25), rgba(14, 35, 97, 0.2));
+  background: linear-gradient(135deg,
+      rgba(92, 15, 29, 0.25),
+      rgba(14, 35, 97, 0.2));
   border-color: rgba(214, 178, 76, 0.3);
 }
 
