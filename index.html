@@ -5,13 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="International Conference on Cancer Biology (ICCB 2027) — Molecular Mechanisms, Genomics & Novel Therapeutics. February 4–6, 2027 at IIT Madras, Chennai, India. Hosted by Hyundai Centre for Cancer Genomics." />
+    content="International Conference on Cancer Biology (ICCB 2027) — Genomics, Molecular Mechanisms and Novel Therapeutics. February 4–6, 2027 at IIT Madras, Chennai, India. Hosted by Hyundai Centre for Cancer Genomics." />
   <meta name="keywords"
     content="ICCB 2027, Cancer Biology, IIT Madras, Genomics, Cancer Conference, Precision Medicine, Oncology" />
   <meta name="author" content="Hyundai Centre for Cancer Genomics, IIT Madras" />
   <meta property="og:title" content="ICCB 2027 — International Conference on Cancer Biology" />
   <meta property="og:description"
-    content="Molecular Mechanisms, Genomics & Novel Therapeutics | Feb 4–6, 2027 | IIT Madras, Chennai" />
+    content="Genomics, Molecular Mechanisms and Novel Therapeutics | Feb 4–6, 2027 | IIT Madras, Chennai" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#250915" />
 
@@ -58,7 +58,7 @@
         <a href="#timeline" role="menuitem">Timeline</a>
         <!-- <a href="#sponsors" role="menuitem">Sponsors</a> -->
         <a href="#contact" role="menuitem">Contact</a>
-        <a href="#register" class="nav-cta" role="menuitem" id="nav-register-btn">Register Now</a>
+        <!-- <a href="#register" class="nav-cta" role="menuitem" id="nav-register-btn">Register Now</a> -->
       </div>
 
       <!-- Hamburger -->
@@ -151,9 +151,7 @@
          CONFERENCE SUBTITLE
          ======================================================== -->
       <p class="hero-subtitle">
-        <span> Molecular Mechanisms, Genomics &amp; Novel Therapeutics </span>
-
-        <span> A Global Convergence of Cancer Research Excellence </span>
+        <span> Genomics, Molecular Mechanisms and Novel Therapeutics </span>
       </p>
 
       <!-- ========================================================
@@ -252,7 +250,7 @@
           </p>
 
           <p class="about-description">
-            Themed around <em>Molecular Mechanisms, Genomics &amp; Novel Therapeutics</em>, ICCB 2027 will
+            Themed around <em>Genomics, Molecular Mechanisms and Novel Therapeutics</em>, ICCB 2027 will
             serve as a high-impact platform for presenting breakthrough discoveries, fostering global
             collaborations, and translating cutting-edge research into clinical applications that can change
             the course of cancer treatment worldwide.
@@ -1376,20 +1374,11 @@ aaz
               </div>
             </div>
 
-            <!-- <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">🌐</div>
-              <div class="contact-text">
-                <p class="c-label">Website</p>
-                <p class="c-value"><a href="https://hccg.iitm.ac.in" target="_blank" rel="noopener">hccg.iitm.ac.in</a>
-                </p>
-              </div>
-            </div> -->
-
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">📞</div>
               <div class="contact-text">
                 <p class="c-label">Phone</p>
-                <p class="c-value">+91 (44) 2257 — IITM (To be updated)</p>
+                <p class="c-value">044-22575108</p>
               </div>
             </div>
 
@@ -1399,6 +1388,15 @@ aaz
                 <p class="c-label">Address</p>
                 <p class="c-value">
                   Dept. of Biotechnology, IIT Madras<br />Chennai – 600 036, Tamil Nadu, India
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">🌐</div>
+              <div class="contact-text">
+                <p class="c-label">Website</p>
+                <p class="c-value"><a href="https://nctb.iitm.ac.in" target="_blank" rel="noopener">nctb.iitm.ac.in</a>
                 </p>
               </div>
             </div>
@@ -1418,19 +1416,19 @@ aaz
               <input type="email" id="cf-email" name="email" placeholder="jane.smith@university.edu" required
                 autocomplete="email" />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="cf-category">Enquiry Type</label>
               <select id="cf-category" name="category">
                 <option value="">Select an enquiry type...</option>
                 <option value="registration">Registration</option>
                 <option value="abstract">Abstract Submission</option>
-                <!-- <option value="sponsorship">Sponsorship</option> -->
+                <option value="sponsorship">Sponsorship</option>
                 <option value="accommodation">Accommodation</option>
                 <option value="speaker">Speaker Nomination</option>
                 <option value="visa">Visa Support Letter</option>
                 <option value="other">Other</option>
               </select>
-            </div>
+            </div> -->
             <div class="form-group">
               <label for="cf-message">Message *</label>
               <textarea id="cf-message" name="message" placeholder="Please describe your enquiry..."
@@ -1460,21 +1458,24 @@ aaz
           <!-- Brand -->
           <div class="footer-brand">
             <div class="brand-logo">
-              <img src="assets/iccb27-logo.png" alt="ICCB 2027 Logo" onerror="this.style.display='none'"
-                style="height: 48px; width: auto" />
+              <img src="assets/iccb27-logo.webp" alt="ICCB 2027 - International Conference on Cancer Biology"
+                id="hero-logo-img" onerror="
+                this.style.display='none';
+                document.getElementById('hero-logo-svg').style.display='block';
+              " />
             </div>
             <p class="brand-name">ICCB 2027</p>
             <p class="brand-sub">
               International Conference on Cancer Biology<br />
-              Molecular Mechanisms, Genomics &amp; Novel Therapeutics<br />
+              Genomics, Molecular Mechanisms and Novel Therapeutics<br />
               February 4–6, 2027 · IIT Madras, Chennai
             </p>
-            <div class="footer-social" role="list">
+            <!-- <div class="footer-social" role="list">
               <a href="#" class="social-btn" aria-label="Twitter/X" role="listitem" id="footer-twitter">𝕏</a>
               <a href="#" class="social-btn" aria-label="LinkedIn" role="listitem" id="footer-linkedin">in</a>
               <a href="#" class="social-btn" aria-label="ResearchGate" role="listitem" id="footer-rg">Rg</a>
               <a href="#" class="social-btn" aria-label="YouTube" role="listitem" id="footer-yt">▶</a>
-            </div>
+            </div> -->
           </div>
 
           <!-- Quick Links: Conference -->
@@ -1484,7 +1485,7 @@ aaz
               <li><a href="#about">About ICCB 2027</a></li>
               <li><a href="#highlights">Highlights</a></li>
               <li><a href="#themes">Scientific Themes</a></li>
-              <li><a href="#speakers">Keynote Speakers</a></li>
+              <li><a href="./speakers.html">Keynote Speakers</a></li>
               <li><a href="#timeline">Important Dates</a></li>
             </ul>
           </div>
@@ -1493,8 +1494,8 @@ aaz
           <div class="footer-col">
             <h4>Participate</h4>
             <ul>
-              <li><a href="#register">Register Now</a></li>
-              <li><a href="#register">Submit Abstract</a></li>
+              <!-- <li><a href="#register">Register Now</a></li>
+              <li><a href="#register">Submit Abstract</a></li> -->
               <!-- <li><a href="#sponsors">Sponsorship</a></li> -->
               <li><a href="./organizing_committee.html">Committee</a></li>
               <li><a href="#faq">FAQs</a></li>

@@ -25,6 +25,48 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23992221'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-weight='bold'>iC</text></svg>" />
 </head>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const speakersGrid = document.querySelector(".speakers-grid");
+
+        if (!speakersGrid) return;
+
+        const speakerCards = Array.from(
+            speakersGrid.querySelectorAll(".speaker-card")
+        );
+
+        speakerCards.sort((a, b) => {
+            const nameA = a.querySelector(".s-name")?.textContent.trim() || "";
+            const nameB = b.querySelector(".s-name")?.textContent.trim() || "";
+
+            return nameA.localeCompare(nameB, undefined, {
+                sensitivity: "base"
+            });
+        });
+
+        speakerCards.forEach((card, index) => {
+            // Keep the existing animation delay pattern
+            const delays = [
+                "reveal-delay-1",
+                "reveal-delay-2",
+                "reveal-delay-3",
+                "reveal-delay-4"
+            ];
+
+            card.classList.remove(
+                "reveal-delay-1",
+                "reveal-delay-2",
+                "reveal-delay-3",
+                "reveal-delay-4"
+            );
+
+            card.classList.add(delays[index % 4]);
+
+            speakersGrid.appendChild(card);
+        });
+    });
+</script>
+
 <body>
     <!-- ============================================================
        SCROLL PROGRESS BAR
@@ -55,7 +97,7 @@
                 <a href="./index.html#timeline" role="menuitem">Timeline</a>
                 <!-- <a href="./index.html#sponsors" role="menuitem">Sponsors</a> -->
                 <a href="./index.html#contact" role="menuitem">Contact</a>
-                <a href="./index.html#register" class="nav-cta" role="menuitem" id="nav-register-btn">Register Now</a>
+                <!-- <a href="./index.html#register" class="nav-cta" role="menuitem" id="nav-register-btn">Register Now</a> -->
             </div>
 
             <!-- Hamburger -->
@@ -175,7 +217,7 @@
                                 stroke="rgba(39,83,156,0.7)" stroke-width="1" />
                         </svg>
                     </div>
-                    <h4 class="s-name">Tej Mallu A. C</h4>
+                    <h4 class="s-name">Tej Mallu A.C</h4>
                     <p class="s-institution">University of Glasgow, UK</p>
                     <p class="s-country">🌍 International</p>
                 </div>
@@ -190,24 +232,10 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Ajay Tijore</h4>
-                    <p class="s-institution">IISc, Bengaluru</p>
+                    <p class="s-institution">IISc, Bangalore</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
-                </div>
-                <!-- 3 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Anguraj Sadanandam</h4>
-                    <p class="s-institution">ICR, UK</p>
-                    <p class="s-country">🌍 International</p>
                 </div>
                 <!-- 4 -->
                 <div class="speaker-card reveal reveal-delay-4">
@@ -220,7 +248,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Ankur Sharma</h4>
-                    <p class="s-institution">Garvan Institute, Australia</p>
+                    <p class="s-institution">The Kinghorn Cancer Centre, Australia</p>
                     <p class="s-country">🌍 International</p>
                 </div>
                 <!-- 5 -->
@@ -234,7 +262,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Annapoorni Rangarajan</h4>
-                    <p class="s-institution">IISc, Bengaluru</p>
+                    <p class="s-institution">IISc, Bangalore</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -264,7 +292,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Aruna Korlimarla</h4>
-                    <p class="s-institution">Sri Shankara Cancer Foundation, Bengaluru</p>
+                    <p class="s-institution">Sri Shankara Cancer Foundation, Bangalore</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -296,7 +324,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Biswajit Dubashi</h4>
-                    <p class="s-institution">JIPMER, Puducherry</p>
+                    <p class="s-institution">JIPMER, Pondicherry</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -313,20 +341,6 @@
                     </div>
                     <h4 class="s-name">Büşra Yüksel</h4>
                     <p class="s-institution">Goethe University Frankfurt, Germany</p>
-                    <p class="s-country">🌍 International</p>
-                </div>
-                <!-- 11 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Charbel Darido</h4>
-                    <p class="s-institution">Peter MacCallum Cancer Centre, Australia</p>
                     <p class="s-country">🌍 International</p>
                 </div>
                 <!-- 12 -->
@@ -354,7 +368,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Gabriel Ichim</h4>
-                    <p class="s-institution">Cancer Research Center, Lyon</p>
+                    <p class="s-institution">Center for Research on Cancer in Lyon</p>
                     <p class="s-country">🌍 International</p>
                 </div>
                 <!-- 14 -->
@@ -396,7 +410,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Kumaravel Somasundaram</h4>
-                    <p class="s-institution">IISc, Bengaluru</p>
+                    <p class="s-institution">IISc, Bangalore</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -416,20 +430,6 @@
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
-                </div>
-                <!-- 18 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Moni Abraham Kuriakose</h4>
-                    <p class="s-institution">USA</p>
-                    <p class="s-country">🌍 International</p>
                 </div>
                 <!-- 19 -->
                 <div class="speaker-card reveal reveal-delay-3">
@@ -463,22 +463,6 @@
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
                 </div>
-                <!-- 21 -->
-                <div class="speaker-card reveal reveal-delay-1">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Prashant Kumar</h4>
-                    <p class="s-institution">Karkinos Healthcare, Mumbai</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
                 <!-- 22 -->
                 <div class="speaker-card reveal reveal-delay-2">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
@@ -504,7 +488,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Ramray Bhat</h4>
-                    <p class="s-institution">IISc, Bengaluru</p>
+                    <p class="s-institution">IISc, Bangalore</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -525,22 +509,6 @@
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
                 </div>
-                <!-- 25 -->
-                <div class="speaker-card reveal reveal-delay-1">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Sabarinathan Radhakrishnan</h4>
-                    <p class="s-institution">NCBS, Bengaluru</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
                 <!-- 26 -->
                 <div class="speaker-card reveal reveal-delay-2">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
@@ -552,24 +520,10 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Saran Kumar</h4>
-                    <p class="s-institution">IIT Delhi</p>
+                    <p class="s-institution">IIT, New Delhi</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
-                </div>
-                <!-- 27 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Sarath Kumar</h4>
-                    <p class="s-institution">University of Western Australia</p>
-                    <p class="s-country">🌍 International</p>
                 </div>
                 <!-- 28 -->
                 <div class="speaker-card reveal reveal-delay-4">
@@ -582,40 +536,10 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Sathees. C. Raghavan</h4>
-                    <p class="s-institution">IISc, Bengaluru</p>
+                    <p class="s-institution">IISc, Bangalore</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
-                </div>
-                <!-- 29 -->
-                <div class="speaker-card reveal reveal-delay-1">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Senthil Kumar</h4>
-                    <p class="s-institution">Mizoram University</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
-                <!-- 30 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Seth Coffelt</h4>
-                    <p class="s-institution">CRUK Beatson Institute, UK</p>
-                    <p class="s-country">🌍 International</p>
                 </div>
                 <!-- 31 -->
                 <div class="speaker-card reveal reveal-delay-3">
@@ -628,7 +552,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Shamik Sen</h4>
-                    <p class="s-institution">IIT Bombay</p>
+                    <p class="s-institution">IIT, Bombay</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -677,22 +601,6 @@
                     </div>
                     <h4 class="s-name">Sivaprakash Ramalingam</h4>
                     <p class="s-institution">IIT Kanpur</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
-                <!-- 35 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Sonam Dhamija</h4>
-                    <p class="s-institution">IGIB, New Delhi</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -773,20 +681,6 @@
                     <p class="s-institution">University of Freiburg, Germany</p>
                     <p class="s-country">🌍 International</p>
                 </div>
-                <!-- 41 -->
-                <!-- <div class="speaker-card reveal reveal-delay-1">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <h4 class="s-name">Vinay Tergaonkar</h4>
-                    <p class="s-institution">IMCB, A*STAR, Singapore</p>
-                    <p class="s-country">🌍 International</p>
-                </div> -->
                 <!-- 42 -->
                 <div class="speaker-card reveal reveal-delay-2">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
@@ -798,7 +692,7 @@
                         </svg>
                     </div>
                     <h4 class="s-name">Vinod Scaria</h4>
-                    <p class="s-institution">IIT Kanpur</p>
+                    <p class="s-institution">Karkinos Healthcare, Mumbai</p>
                     <p class="s-country">
                         <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
                     </p>
@@ -856,35 +750,35 @@
                     <!-- Brand -->
                     <div class="footer-brand">
                         <div class="brand-logo">
-                            <img src="assets/iccb27-logo.png" alt="ICCB 2027 Logo" onerror="this.style.display='none'"
-                                style="height: 48px; width: auto" />
+                            <img src="assets/iccb27-logo.webp"
+                                alt="ICCB 2027 - International Conference on Cancer Biology" id="hero-logo-img" onerror="
+                this.style.display='none';
+                document.getElementById('hero-logo-svg').style.display='block';
+              " />
                         </div>
                         <p class="brand-name">ICCB 2027</p>
                         <p class="brand-sub">
                             International Conference on Cancer Biology<br />
-                            Molecular Mechanisms, Genomics &amp; Novel Therapeutics<br />
+                            Genomics, Molecular Mechanisms and Novel Therapeutics<br />
                             February 4–6, 2027 · IIT Madras, Chennai
                         </p>
-                        <div class="footer-social" role="list">
-                            <a href="#" class="social-btn" aria-label="Twitter/X" role="listitem"
-                                id="footer-twitter">𝕏</a>
-                            <a href="#" class="social-btn" aria-label="LinkedIn" role="listitem"
-                                id="footer-linkedin">in</a>
-                            <a href="#" class="social-btn" aria-label="ResearchGate" role="listitem"
-                                id="footer-rg">Rg</a>
-                            <a href="#" class="social-btn" aria-label="YouTube" role="listitem" id="footer-yt">▶</a>
-                        </div>
+                        <!-- <div class="footer-social" role="list">
+              <a href="#" class="social-btn" aria-label="Twitter/X" role="listitem" id="footer-twitter">𝕏</a>
+              <a href="#" class="social-btn" aria-label="LinkedIn" role="listitem" id="footer-linkedin">in</a>
+              <a href="#" class="social-btn" aria-label="ResearchGate" role="listitem" id="footer-rg">Rg</a>
+              <a href="#" class="social-btn" aria-label="YouTube" role="listitem" id="footer-yt">▶</a>
+            </div> -->
                     </div>
 
                     <!-- Quick Links: Conference -->
                     <div class="footer-col">
                         <h4>Conference</h4>
                         <ul>
-                            <li><a href="#about">About ICCB 2027</a></li>
-                            <li><a href="#highlights">Highlights</a></li>
-                            <li><a href="#themes">Scientific Themes</a></li>
-                            <li><a href="#speakers">Keynote Speakers</a></li>
-                            <li><a href="#timeline">Important Dates</a></li>
+                            <li><a href="./index.html#about">About ICCB 2027</a></li>
+                            <li><a href="./index.html#highlights">Highlights</a></li>
+                            <li><a href="./index.html#themes">Scientific Themes</a></li>
+                            <li><a href="#">Keynote Speakers</a></li>
+                            <li><a href="./index.html#timeline">Important Dates</a></li>
                         </ul>
                     </div>
 
@@ -892,11 +786,11 @@
                     <div class="footer-col">
                         <h4>Participate</h4>
                         <ul>
-                            <li><a href="#register">Register Now</a></li>
-                            <li><a href="#register">Submit Abstract</a></li>
+                            <!-- <li><a href="./index.html#register">Register Now</a></li>
+                            <li><a href="./index.html#register">Submit Abstract</a></li> -->
                             <!-- <li><a href="#sponsors">Sponsorship</a></li> -->
                             <li><a href="./organizing_committee.html">Committee</a></li>
-                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="./index.html#faq">FAQs</a></li>
                         </ul>
                     </div>
 
@@ -904,11 +798,11 @@
                     <div class="footer-col">
                         <h4>Information</h4>
                         <ul>
-                            <li><a href="#venue">Venue</a></li>
-                            <li><a href="#chennai">About Chennai</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="./index.html#venue">Venue</a></li>
+                            <li><a href="./index.html#chennai">About Chennai</a></li>
+                            <li><a href="./index.html#contact">Contact</a></li>
+                            <!-- <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li> -->
                         </ul>
                     </div>
                 </div>

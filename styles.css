@@ -3585,7 +3585,7 @@ button {
 .footer-brand .brand-logo img {
   height: 56px;
   width: auto;
-  filter: drop-shadow(0 2px 8px rgba(214, 178, 76, 0.3));
+  /* filter: drop-shadow(0 2px 8px rgba(214, 178, 76, 0.3)); */
 }
 
 .footer-brand .brand-name {
