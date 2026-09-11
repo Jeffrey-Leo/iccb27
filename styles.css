@@ -203,9 +203,9 @@ button {
   transition: transform var(--transition-fast);
 }
 
-.nav-logo img:hover {
+/* .nav-logo img:hover {
   transform: scale(1.05);
-}
+} */
 
 .nav-logo-text {
   display: flex;
