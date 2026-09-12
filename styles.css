@@ -147,7 +147,7 @@ button {
    ============================================================ */
 #scroll-progress {
   position: fixed;
-  top: 85px;
+  top: 75px;
   left: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--dna-gold), var(--cellular-red), var(--molecular-blue));
@@ -191,12 +191,12 @@ button {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .nav-logo img {
-  height: 65px;
+  height: 55px;
   width: auto;
   object-fit: contain;
   /* filter: drop-shadow(0 0 24px rgba(214,178,76,0.4)); */
@@ -211,23 +211,24 @@ button {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
+  font-family: var(--font-numbers);
 }
 
 .nav-logo-text .conf-name {
-  font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1rem;
   color: var(--dna-gold);
-  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.nav-logo-text .conf-year {
-  font-family: var(--font-numbers);
-  font-weight: 800;
-  font-size: 1.25rem;
+.nav-logo-text .conf-location {
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--text-white);
-  letter-spacing: 0.05em;
+}
+
+.nav-logo-text .conf-subtxt {
+  font-size: 1rem;
 }
 
 .nav-links {
@@ -305,6 +306,40 @@ button {
 
 .nav-hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-logo-separator {
+  display: inline-block;
+  width: 1px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 1px;
+}
+
+@media (max-width: 1200px) {
+  .nav-logo img {
+    height: 50px;
+    width: auto;
+  }
+}
+
+@media (max-width: 1050px) {
+  .nav-logo img {
+    height: 50px;
+    width: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-logo img {
+    height: 45px;
+    width: auto;
+  }
+
+  .nav-logo-text {
+    font-weight: 700;
+    font-size: 1rem;
+  }
 }
 
 /* ============================================================
