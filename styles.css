@@ -214,7 +214,7 @@ button {
   font-family: var(--font-numbers);
 }
 
-.nav-logo-text .conf-name {
+.nav-logo-text .conf-title {
   font-weight: 700;
   font-size: 1rem;
   color: var(--dna-gold);
@@ -229,6 +229,7 @@ button {
 
 .nav-logo-text .conf-subtxt {
   font-size: 1rem;
+  color: var(--text-white);
 }
 
 .nav-links {
