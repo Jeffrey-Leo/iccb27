@@ -146,7 +146,7 @@ button {
    ============================================================ */
 #scroll-progress {
   position: fixed;
-  top: 75px;
+  top: 70px;
   left: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--dna-gold), var(--cellular-red), var(--molecular-blue));
