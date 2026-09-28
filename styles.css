@@ -99,7 +99,6 @@ body {
   font-family: var(--font-body);
   color: var(--text-white);
   background: var(--midnight);
-  overflow-x: hidden;
   line-height: 1.7;
 }
 
@@ -183,6 +182,7 @@ button {
 }
 
 .nav-container {
+  width: min(100%, var(--container-max));
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 24px;
@@ -321,29 +321,69 @@ button {
   margin: 0 0.5px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1366px) {
+  #navbar {
+    padding: 12px 0;
+  }
+
+  #navbar.scrolled {
+    padding: 8px 0;
+  }
+
+  .nav-container {
+    gap: 14px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .nav-logo {
+    gap: 6px;
+  }
+
   .nav-logo img {
-    height: 50px;
+    height: 42px;
     width: auto;
+  }
+
+  .nav-logo-text .conf-title,
+  .nav-logo-text .conf-location {
+    font-size: 0.88rem;
+  }
+
+  .nav-logo-text .conf-subtxt {
+    font-size: 0.66rem;
+  }
+
+  .nav-logo-separator {
+    height: 38px;
+    margin: 0;
+  }
+
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-links a {
+    padding: 7px 6px;
+    font-size: 0.78rem;
+  }
+
+  .nav-links .nav-cta {
+    padding: 8px 13px !important;
   }
 }
 
-@media (max-width: 1050px) {
-  .nav-logo img {
-    height: 50px;
-    width: auto;
-  }
-}
-
-@media (max-width: 992px) {
-  .nav-logo img {
-    height: 45px;
-    width: auto;
+@media (max-width: 1100px) {
+  .nav-links {
+    display: none;
   }
 
-  .nav-logo-text {
-    font-weight: 700;
-    font-size: 1rem;
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-mobile {
+    top: 68px;
   }
 }
 
@@ -841,23 +881,40 @@ button {
 
 @media (min-width: 1024px) and (max-width: 1399px) {
   #hero .hero-content {
-    padding-top: 95px;
+    padding-top: 82px;
+    padding-bottom: 42px;
   }
 
   #hero .hero-logo img {
-    height: 150px;
+    height: 124px;
   }
 
   #hero #hero-logo-svg {
-    height: 175px !important;
+    height: 148px !important;
   }
 
   #hero .hero-title {
-    font-size: 3.8rem;
+    font-size: clamp(2.75rem, 3.75vw, 3.25rem);
+  }
+
+  #hero .line1 {
+    transform: translateY(18px);
+    padding-bottom: 16px;
+  }
+
+  #hero .hero-subtitle {
+    max-width: 820px;
+    font-size: 1.3rem;
   }
 
   #hero .hero-meta {
-    min-width: 700px;
+    width: min(100%, 620px);
+    min-width: 0;
+  }
+
+  #hero .hero-meta-item {
+    padding-right: 18px;
+    padding-left: 18px;
   }
 }
 
@@ -872,30 +929,41 @@ button {
   }
 
   #hero .hero-content {
-    width: 94%;
-    padding-top: 110px;
-    padding-bottom: 70px;
+    width: min(94%, 960px);
+    padding: 96px 20px 52px;
   }
 
   #hero .hero-logo img {
-    height: 135px;
+    height: 118px;
   }
 
   #hero #hero-logo-svg {
-    height: 145px !important;
+    height: 138px !important;
   }
 
   #hero .hero-title {
-    font-size: clamp(2.4rem, 6vw, 3.5rem);
+    font-size: clamp(2.3rem, 5vw, 3.1rem);
+  }
+
+  #hero .line1 {
+    transform: translateY(14px);
+    padding-bottom: 14px;
   }
 
   #hero .hero-subtitle {
     max-width: 750px;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
 
   #hero .hero-meta {
-    min-width: 650px;
+    width: min(100%, 680px);
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  #hero .hero-meta-item {
+    padding-right: 18px;
+    padding-left: 18px;
   }
 }
 
@@ -915,7 +983,7 @@ button {
 
   #hero .hero-content {
     width: 100%;
-    padding: 100px 16px 65px;
+    padding: 92px 16px 48px;
   }
 
   /* Logo */
@@ -926,20 +994,20 @@ button {
 
   #hero .hero-logo img {
     width: 300px;
-    max-width: 82vw;
+    max-width: 72vw;
     height: auto;
   }
 
   #hero #hero-logo-svg {
     width: 300px !important;
-    max-width: 82vw;
+    max-width: 72vw;
     height: auto !important;
   }
 
   /* Title */
 
   #hero .hero-title {
-    font-size: clamp(2rem, 9vw, 2.8rem);
+    font-size: clamp(1.75rem, 7.4vw, 2.35rem);
     line-height: 1.08;
   }
 
@@ -950,10 +1018,10 @@ button {
   /* Subtitle */
 
   #hero .hero-subtitle {
-    margin-top: 18px;
+    margin-top: 16px;
     padding: 0 8px;
 
-    font-size: 0.98rem;
+    font-size: 0.92rem;
     line-height: 1.5;
   }
 
@@ -963,7 +1031,7 @@ button {
     width: calc(100% - 20px);
     min-width: 0;
 
-    margin-top: 25px;
+    margin-top: 20px;
     padding: 8px 12px;
 
     flex-direction: column;
@@ -1137,6 +1205,7 @@ button {
 }
 
 .container {
+  width: min(100%, var(--container-max));
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 24px;
@@ -1766,77 +1835,6 @@ button {
 
 
 /* ============================================================
-   RESPONSIVE - TABLET
-   ============================================================ */
-
-@media (max-width: 1100px) {
-
-  .themes-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
-
-/* ============================================================
-   RESPONSIVE - MOBILE
-   ============================================================ */
-
-@media (max-width: 700px) {
-
-  .themes-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .theme-card {
-    padding: 24px 14px;
-    min-height: 135px;
-  }
-
-  .theme-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 2rem;
-    margin-bottom: 8px;
-  }
-
-  .theme-name {
-    font-size: 0.82rem;
-  }
-
-}
-
-
-/* ============================================================
-   SMALL MOBILE
-   ============================================================ */
-
-@media (max-width: 450px) {
-
-  .themes-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .theme-card {
-    min-height: 120px;
-    padding: 22px 15px;
-  }
-
-  .theme-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 1.9rem;
-  }
-
-  .theme-name {
-    font-size: 0.88rem;
-  }
-
-}
-
-/* ============================================================
    KEYNOTE SPEAKERS
    ============================================================ */
 #speakers {
@@ -1893,6 +1891,7 @@ button {
 .speaker-avatar {
   width: 160px;
   height: 160px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid rgba(214, 178, 76, 0.4);
@@ -1983,6 +1982,7 @@ button {
 .speaker-card .avatar-sm {
   width: 150px;
   height: 150px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   margin: 0 auto 20px;
   border: 2px solid rgba(214, 178, 76, 0.3);
@@ -3997,20 +3997,217 @@ button {
 }
 
 /* ============================================================
-   RESPONSIVE — TABLET (1024px)
+   RESPONSIVE — LAPTOP (1366px)
+   ============================================================ */
+@media (max-width: 1366px) {
+  :root {
+    --section-pad: 48px;
+  }
+
+  #speakers,
+  #committee {
+    padding-top: 6rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .about-grid {
+    gap: 48px;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .about-stats {
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .stat-card {
+    padding: 22px 18px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .highlights-grid,
+  .why-grid {
+    gap: 20px;
+  }
+
+  .highlight-card {
+    padding: 28px 20px;
+  }
+
+  .highlight-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 18px;
+  }
+
+  .why-card {
+    padding: 26px 20px;
+  }
+
+  .why-icon {
+    font-size: 1.9rem;
+    margin-bottom: 16px;
+  }
+
+  .themes-grid {
+    gap: 16px;
+  }
+
+  .theme-card {
+    min-height: 112px;
+    padding: 24px 16px;
+  }
+
+  .theme-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.9rem;
+  }
+
+  .speakers-featured {
+    gap: 18px;
+    margin-bottom: 44px;
+  }
+
+  .featured-speaker-card {
+    padding: 32px;
+    gap: 30px;
+  }
+
+  .speaker-avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .speaker-info .speaker-name {
+    font-size: 1.75rem;
+  }
+
+  .speakers-grid {
+    gap: 18px;
+  }
+
+  .speaker-card {
+    padding: 20px 14px;
+  }
+
+  .speaker-card .avatar-sm {
+    width: 124px;
+    height: 124px;
+    margin-bottom: 16px;
+  }
+
+  .committee-group {
+    margin-bottom: 52px;
+  }
+
+  .committee-grid {
+    gap: 18px;
+  }
+
+  .committee-card {
+    padding: 24px 18px;
+  }
+
+  .committee-avatar {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 12px;
+  }
+
+  .venue-grid,
+  .contact-grid {
+    gap: 36px;
+  }
+
+  .venue-map iframe {
+    height: 360px;
+  }
+
+  .venue-cards {
+    gap: 16px;
+    margin-top: 44px;
+  }
+
+  .venue-card {
+    padding: 24px 20px;
+  }
+
+  .chennai-grid {
+    gap: 18px;
+  }
+
+  .chennai-weather {
+    margin-top: 36px;
+    padding: 28px 32px;
+    gap: 28px;
+  }
+
+  .weather-stats {
+    gap: 24px;
+  }
+
+  .tl-content {
+    padding: 22px;
+  }
+
+  .contact-form-card {
+    padding: 32px;
+  }
+
+  .footer-top {
+    padding: 56px 0 42px;
+  }
+
+  .footer-brand .brand-logo img {
+    height: 48px;
+  }
+
+  .footer-grid {
+    gap: 32px;
+  }
+
+  .btn {
+    padding: 12px 26px;
+  }
+
+  .reveal-left:not(.revealed),
+  .reveal-right:not(.revealed) {
+    transform: translateY(24px);
+  }
+
+  .reveal-left.revealed,
+  .reveal-right.revealed {
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET LANDSCAPE (1100px)
    ============================================================ */
 @media (max-width: 1100px) {
   :root {
-    --section-pad: 80px;
+    --section-pad: 44px;
   }
 
-  .nav-links {
-    gap: 2px;
-  }
-
-  .nav-links a {
-    padding: 7px 10px;
-    font-size: 0.82rem;
+  #speakers,
+  #committee {
+    padding-top: 5.5rem;
   }
 
   .highlights-grid {
@@ -4026,7 +4223,7 @@ button {
   }
 
   .speakers-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .committee-grid {
@@ -4045,6 +4242,24 @@ button {
   .venue-cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .about-grid {
+    gap: 36px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 20px 14px;
+  }
+
+  .contact-grid,
+  .venue-grid {
+    gap: 28px;
+  }
 }
 
 /* ============================================================
@@ -4052,20 +4267,29 @@ button {
    ============================================================ */
 @media (max-width: 768px) {
   :root {
-    --section-pad: 60px;
+    --section-pad: 42px;
+  }
+
+  #speakers,
+  #committee {
+    padding-top: 5rem;
   }
 
   /* Nav */
-  .nav-links {
-    display: none;
-  }
-
-  .nav-hamburger {
-    display: flex;
-  }
-
   .nav-logo-text {
     display: none;
+  }
+
+  .nav-logo-separator {
+    display: none;
+  }
+
+  .nav-logo img {
+    height: 40px;
+  }
+
+  .nav-mobile {
+    top: 64px;
   }
 
   /* Hero */
@@ -4089,7 +4313,7 @@ button {
   /* About */
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
   }
 
   .about-visual {
@@ -4098,12 +4322,12 @@ button {
 
   /* Highlights */
   .highlights-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* Why Attend */
   .why-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* Themes */
@@ -4156,32 +4380,6 @@ button {
     gap: 24px;
   }
 
-  /* Timeline */
-  .timeline-container::before {
-    left: 20px;
-  }
-
-  .timeline-item {
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-  }
-
-  .timeline-item:nth-child(odd) .tl-content,
-  .timeline-item:nth-child(even) .tl-content {
-    grid-column: 2;
-    text-align: left;
-  }
-
-  .timeline-item:nth-child(odd) .tl-dot,
-  .timeline-item:nth-child(even) .tl-dot {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .tl-spacer {
-    display: none;
-  }
-
   /* FAQ */
   .faq-grid {
     grid-template-columns: 1fr;
@@ -4195,8 +4393,12 @@ button {
 
   /* Footer */
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 
   .footer-bottom-inner {
@@ -4213,50 +4415,11 @@ button {
   .register-actions .btn {
     justify-content: center;
   }
+
 }
 
 /* ============================================================
-   RESPONSIVE — MOBILE SMALL (480px)
-   ============================================================ */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .themes-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .speakers-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .committee-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .chennai-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-meta {
-    flex-direction: column;
-  }
-
-  #back-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
-  }
-}
-
-/* ============================================================
-   MOBILE REFINEMENTS
+   RESPONSIVE — MOBILE (700px)
    ============================================================ */
 @media (max-width: 700px) {
   html {
@@ -4264,7 +4427,7 @@ button {
   }
 
   :root {
-    --section-pad: 46px;
+    --section-pad: 40px;
     --section-pad-sm: 46px;
   }
 
@@ -4289,31 +4452,17 @@ button {
     margin-bottom: 22px;
   }
 
-  .nav-logo img {
-    height: 38px;
+  body {
+    line-height: 1.65;
   }
 
-  .nav-logo-separator {
-    height: 34px;
+  .nav-mobile {
+    top: 58px;
   }
 
-  #hero .hero-content {
-    padding-top: 92px;
-    padding-bottom: 48px;
-  }
-
-  #hero .hero-logo img,
-  #hero #hero-logo-svg {
-    max-width: 72vw;
-  }
-
-  #hero .hero-title {
-    font-size: clamp(1.75rem, 7.4vw, 2.35rem);
-    line-height: 1.12;
-  }
-
-  #hero .hero-subtitle {
-    font-size: 0.92rem;
+  #speakers,
+  #committee {
+    padding-top: 5.5rem;
   }
 
   .highlight-card,
@@ -4322,6 +4471,16 @@ button {
   .speaker-card,
   .committee-card {
     padding: 20px 16px;
+  }
+
+  .theme-card {
+    min-height: 112px;
+  }
+
+  .theme-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
   }
 
   .speaker-card .avatar-sm {
@@ -4347,6 +4506,8 @@ button {
 
   .committee-tabs {
     gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .tab-btn {
@@ -4359,24 +4520,110 @@ button {
   }
 }
 
-@media (max-width: 450px) {
+/* ============================================================
+   RESPONSIVE — COMPACT MOBILE (576px)
+   ============================================================ */
+@media (max-width: 576px) {
+  :root {
+    --section-pad: 38px;
+  }
+
+  .container,
+  .nav-container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .section-title {
+    font-size: clamp(1.65rem, 6vw, 2rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.92rem;
+  }
+
+  #speakers,
+  #committee {
+    padding-top: 4.75rem;
+  }
+
+  .highlights-grid,
+  .why-grid,
+  .committee-grid,
+  .venue-cards,
+  .chennai-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .speakers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .featured-speaker-card {
+    padding: 24px 18px;
+    gap: 20px;
+  }
+
+  .committee-group {
+    margin-bottom: 40px;
+  }
+
+  .venue-map iframe {
+    height: 300px;
+  }
+
+  .chennai-weather {
+    padding: 22px 20px;
+  }
+
+  .weather-stats {
+    justify-content: center;
+  }
+
+  .contact-form-card {
+    padding: 24px 20px;
+  }
+
+  .footer-top {
+    padding: 44px 0 32px;
+  }
+
+  .register-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .register-actions {
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE (480px)
+   ============================================================ */
+@media (max-width: 480px) {
   html {
     font-size: 14px;
   }
 
   :root {
-    --section-pad: 40px;
-    --section-pad-sm: 40px;
+    --section-pad: 36px;
   }
 
   .container,
   .nav-container {
     padding-right: 15px;
     padding-left: 15px;
-  }
-
-  #hero .hero-content {
-    padding: 88px 15px 40px;
   }
 
   #hero .hero-logo img,
@@ -4398,6 +4645,22 @@ button {
     padding: 6px 10px;
   }
 
+  .speakers-grid,
+  .committee-grid,
+  .chennai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .speaker-card .avatar-sm {
+    width: 96px;
+    height: 96px;
+  }
+
+  .speaker-avatar {
+    width: 108px;
+    height: 108px;
+  }
+
   .themes-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
@@ -4414,17 +4677,51 @@ button {
     font-size: 1.65rem;
   }
 
-  .speaker-card .avatar-sm {
-    width: 96px;
-    height: 96px;
-  }
-
-  .speaker-avatar {
-    width: 108px;
-    height: 108px;
-  }
-
   .more-speakers-note {
     padding: 22px 16px;
+  }
+
+  #back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — NARROW PHONES (390px)
+   ============================================================ */
+@media (max-width: 390px) {
+  :root {
+    --section-pad: 32px;
+  }
+
+  .container,
+  .nav-container {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  #hero .hero-content {
+    padding: 84px 14px 36px;
+  }
+
+  .themes-grid {
+    gap: 8px;
+  }
+
+  .theme-card {
+    min-height: 104px;
+    padding: 14px 8px;
+  }
+
+  .theme-name {
+    font-size: 0.82rem;
+  }
+
+  .committee-card,
+  .speaker-card {
+    padding: 18px 14px;
   }
 }
