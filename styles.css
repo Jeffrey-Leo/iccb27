@@ -178,6 +178,10 @@ button {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
+#navbar #hyundaiLogo{
+  border-radius: 8px !important;
+}
+
 .nav-container {
   max-width: var(--container-max);
   margin: 0 auto;
@@ -196,7 +200,7 @@ button {
 }
 
 .nav-logo img {
-  height: 55px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   /* filter: drop-shadow(0 0 24px rgba(214,178,76,0.4)); */
@@ -228,14 +232,14 @@ button {
 }
 
 .nav-logo-text .conf-subtxt {
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: var(--text-white);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 3px;
 }
 
 .nav-links a {
@@ -243,7 +247,7 @@ button {
   font-weight: 500;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.8);
-  padding: 8px 14px;
+  padding: 8px;
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-fast);
   letter-spacing: 0.02em;
@@ -314,7 +318,7 @@ button {
   width: 1px;
   height: 50px;
   background: rgba(255, 255, 255, 0.3);
-  margin: 0 1px;
+  margin: 0 0.5px;
 }
 
 @media (max-width: 1200px) {
@@ -4248,5 +4252,179 @@ button {
     right: 20px;
     width: 42px;
     height: 42px;
+  }
+}
+
+/* ============================================================
+   MOBILE REFINEMENTS
+   ============================================================ */
+@media (max-width: 700px) {
+  html {
+    font-size: 15px;
+  }
+
+  :root {
+    --section-pad: 46px;
+    --section-pad-sm: 46px;
+  }
+
+  .container,
+  .nav-container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .section-title {
+    font-size: clamp(1.7rem, 6vw, 2.15rem);
+    line-height: 1.16;
+    margin-bottom: 14px;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .section-header {
+    margin-bottom: 22px;
+  }
+
+  .nav-logo img {
+    height: 38px;
+  }
+
+  .nav-logo-separator {
+    height: 34px;
+  }
+
+  #hero .hero-content {
+    padding-top: 92px;
+    padding-bottom: 48px;
+  }
+
+  #hero .hero-logo img,
+  #hero #hero-logo-svg {
+    max-width: 72vw;
+  }
+
+  #hero .hero-title {
+    font-size: clamp(1.75rem, 7.4vw, 2.35rem);
+    line-height: 1.12;
+  }
+
+  #hero .hero-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .highlight-card,
+  .why-card,
+  .theme-card,
+  .speaker-card,
+  .committee-card {
+    padding: 20px 16px;
+  }
+
+  .speaker-card .avatar-sm {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 16px;
+  }
+
+  .speaker-avatar {
+    width: 124px;
+    height: 124px;
+  }
+
+  .committee-avatar {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 12px;
+  }
+
+  .committee-group {
+    margin-bottom: 48px;
+  }
+
+  .committee-tabs {
+    gap: 8px;
+  }
+
+  .tab-btn {
+    padding: 9px 13px;
+    font-size: 0.82rem;
+  }
+
+  .tl-content {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 14px;
+  }
+
+  :root {
+    --section-pad: 40px;
+    --section-pad-sm: 40px;
+  }
+
+  .container,
+  .nav-container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  #hero .hero-content {
+    padding: 88px 15px 40px;
+  }
+
+  #hero .hero-logo img,
+  #hero #hero-logo-svg {
+    max-width: 66vw;
+  }
+
+  #hero .hero-title {
+    font-size: clamp(1.65rem, 7vw, 1.95rem);
+  }
+
+  #hero .hero-subtitle {
+    margin-top: 14px;
+    padding: 0 4px;
+  }
+
+  #hero .hero-meta {
+    margin-top: 18px;
+    padding: 6px 10px;
+  }
+
+  .themes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .theme-card {
+    min-height: 112px;
+    padding: 16px 10px;
+  }
+
+  .theme-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.65rem;
+  }
+
+  .speaker-card .avatar-sm {
+    width: 96px;
+    height: 96px;
+  }
+
+  .speaker-avatar {
+    width: 108px;
+    height: 108px;
+  }
+
+  .more-speakers-note {
+    padding: 22px 16px;
   }
 }

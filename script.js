@@ -231,38 +231,38 @@
 // ============================================================
 // 3. STICKY NAVIGATION
 // ============================================================
-(function initNav() {
-  const navbar = document.getElementById('navbar');
-  if (!navbar) return;
+// (function initNav() {
+//   const navbar = document.getElementById('navbar');
+//   if (!navbar) return;
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  }, { passive: true });
+//   window.addEventListener('scroll', () => {
+//     if (window.scrollY > 60) {
+//       navbar.classList.add('scrolled');
+//     } else {
+//       navbar.classList.remove('scrolled');
+//     }
+//   }, { passive: true });
 
-  // Active nav link on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+//   // Active nav link on scroll
+//   const sections = document.querySelectorAll('section[id]');
+//   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + id) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }, { rootMargin: '-40% 0px -55% 0px' });
+//   const observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         const id = entry.target.getAttribute('id');
+//         navLinks.forEach(link => {
+//           link.classList.remove('active');
+//           if (link.getAttribute('href') === '#' + id) {
+//             link.classList.add('active');
+//           }
+//         });
+//       }
+//     });
+//   }, { rootMargin: '-40% 0px -55% 0px' });
 
-  sections.forEach(s => observer.observe(s));
-})();
+//   sections.forEach(s => observer.observe(s));
+// })();
 
 
 // ============================================================
@@ -572,18 +572,18 @@
 // ============================================================
 // 14. PARALLAX SUBTLE EFFECT on HERO
 // ============================================================
-(function initParallax() {
-  const hero = document.getElementById('hero');
-  const canvas = document.getElementById('hero-canvas');
-  if (!hero || !canvas) return;
+// (function initParallax() {
+//   const hero = document.getElementById('hero');
+//   const canvas = document.getElementById('hero-canvas');
+//   if (!hero || !canvas) return;
 
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    if (scrolled < window.innerHeight) {
-      canvas.style.transform = `translateY(${scrolled * 0.25}px)`;
-    }
-  }, { passive: true });
-})();
+//   window.addEventListener('scroll', () => {
+//     const scrolled = window.scrollY;
+//     if (scrolled < window.innerHeight) {
+//       canvas.style.transform = `translateY(${scrolled * 0.25}px)`;
+//     }
+//   }, { passive: true });
+// })();
 
 
 // ============================================================
