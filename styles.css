@@ -1977,8 +1977,8 @@ button {
 }
 
 .speaker-card .avatar-sm {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin: 0 auto 20px;
   border: 2px solid rgba(214, 178, 76, 0.3);
@@ -1999,6 +1999,14 @@ button {
   width: 50px;
   height: 50px;
   opacity: 0.6;
+}
+
+.speaker-card .avatar-sm img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .speaker-card .s-name {
