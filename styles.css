@@ -508,7 +508,7 @@ button {
   font-family: var(--font-heading);
   font-weight: 700;
 
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   line-height: 1.08;
   letter-spacing: -0.025em;
 
@@ -817,7 +817,7 @@ button {
   }
 
   #hero .hero-logo img {
-    height: 132px;
+    height: 125px;
   }
 
   #hero #hero-logo-svg {
@@ -825,7 +825,7 @@ button {
   }
 
   #hero .hero-title {
-    font-size: 3.25rem;
+    font-size: 3rem;
   }
 
   #hero .line1 {
@@ -859,7 +859,7 @@ button {
   }
 
   #hero .hero-logo img {
-    height: clamp(94px, 8.5vw, 116px);
+    height: clamp(85px, 8vw, 105px);
   }
 
   #hero #hero-logo-svg {
@@ -907,7 +907,7 @@ button {
   }
 
   #hero .hero-logo img {
-    height: 104px;
+    height: 100px;
   }
 
   #hero #hero-logo-svg {
