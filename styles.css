@@ -722,7 +722,7 @@ button {
    ============================================================ */
 
 #hero .hero-actions {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 12px;
@@ -3770,7 +3770,7 @@ button {
     flex-shrink: 0;
   }
 
-  .nav-mobile.open {
+  .nav-mobile.open, #hero .hero-actions {
     display: flex;
   }
 
