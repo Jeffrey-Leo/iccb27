@@ -228,9 +228,6 @@
   const detailsContent = section.querySelector('.iccb-themes__details-content');
   const detailsTitle = section.querySelector('.iccb-themes__details-title');
   const detailsCopy = section.querySelector('.iccb-themes__details-copy');
-  const motionButton = section.querySelector('.iccb-themes__motion');
-  const motionIcon = motionButton.querySelector('i');
-  const motionText = motionButton.querySelector('span');
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const themes = themeButtons.map((button, index) => ({
     name: button.querySelector('.iccb-theme-card__name').textContent.trim(),
@@ -251,7 +248,6 @@
   let isVisible = false;
   let isDragging = false;
   let pointerX = 0;
-  let userPaused = false;
 
   const strandColors = {
     gold: [150, 115, 39],
@@ -272,19 +268,8 @@
     return `rgba(${color[0] | 0}, ${color[1] | 0}, ${color[2] | 0}, ${alpha})`;
   }
 
-  function setMotionControl() {
-    const reduced = motionPreference.matches;
-    motionButton.disabled = reduced;
-    motionButton.setAttribute('aria-pressed', String(userPaused || reduced));
-    motionButton.setAttribute('aria-label', reduced
-      ? 'Automatic motion disabled by reduced motion preference'
-      : `${userPaused ? 'Start' : 'Pause'} rotation`);
-    motionIcon.className = `fa-solid ${userPaused || reduced ? 'fa-play' : 'fa-pause'}`;
-    motionText.textContent = reduced ? 'Reduced motion' : userPaused ? 'Start rotation' : 'Pause rotation';
-  }
-
   function shouldAnimate() {
-    return isVisible && !document.hidden && !userPaused && !motionPreference.matches;
+    return isVisible && !document.hidden && !motionPreference.matches;
   }
 
   function drawHelix() {
@@ -503,17 +488,7 @@
     requestRender();
   });
 
-  motionButton.addEventListener('click', () => {
-    if (motionPreference.matches) return;
-    userPaused = !userPaused;
-    velocity = Math.min(velocity, 0.7);
-    setMotionControl();
-    lastFrameTime = 0;
-    requestRender();
-  });
-
   motionPreference.addEventListener('change', () => {
-    setMotionControl();
     lastFrameTime = 0;
     requestRender();
   });
@@ -548,7 +523,6 @@
     isVisible = true;
   }
 
-  setMotionControl();
   resizeCanvas();
 })();
 
