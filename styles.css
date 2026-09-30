@@ -153,13 +153,16 @@ button {
    ============================================================ */
 #scroll-progress {
   position: fixed;
-  top: 70px;
+  top: 0;
   left: 0;
+  width: 100%;
   height: 3px;
   background: linear-gradient(90deg, var(--dna-gold), var(--cellular-red), var(--molecular-blue));
-  z-index: 10000;
-  width: 0%;
-  transition: width 0.1s linear;
+  z-index: 10001;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
 
 /* ============================================================
@@ -1508,163 +1511,262 @@ button {
 }
 
 /* ============================================================
-   SCIENTIFIC THEMES
+   SCIENTIFIC THEMES — Interactive helix
    ============================================================ */
 
-#themes {
-  background: linear-gradient(180deg,
-      var(--genomics-blue) 0%,
-      #0d0618 100%);
-}
+/* #themes.iccb-themes {
+  color: var(--text-white);
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(39, 83, 156, 0.18), transparent 44%),
+    linear-gradient(180deg, var(--genomics-blue) 0%, #0d0618 54%, var(--midnight) 100%);
+} */
 
-
-/* ============================================================
-   THEMES GRID
-   ============================================================ */
-
-.themes-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-}
-
-
-/* ============================================================
-   THEME CARD
-   ============================================================ */
-
-.theme-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius);
-  padding: 24px 16px;
+.iccb-themes__header {
+  max-width: 820px;
+  margin: 0 auto 34px;
   text-align: center;
-  transition: all var(--transition-med);
-  cursor: default;
+}
+
+.iccb-themes__eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--dna-gold);
+  font-family: var(--font-numbers);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+#themes .section-title {
+  color: var(--text-white);
+}
+
+#themes .section-title .gold {
+  color: var(--dna-gold);
+}
+
+#themes .section-subtitle {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-muted);
+}
+
+#themes .section-divider {
+  margin-top: 18px;
+}
+
+.iccb-themes__stage {
   position: relative;
-  overflow: hidden;
-  /* Keeps all cards visually consistent */
-  min-height: 108px;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(320px, 0.95fr) minmax(200px, 1fr);
+  grid-template-rows: repeat(3, minmax(156px, 1fr));
+  align-items: center;
+  min-height: 568px;
+  isolation: isolate;
+}
+
+.iccb-themes__dna {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.iccb-themes__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 470px;
+  outline: none;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.iccb-themes__canvas:active {
+  cursor: grabbing;
+}
+
+.iccb-themes__canvas:focus-visible {
+  outline: 2px solid var(--molecular-blue);
+  outline-offset: -5px;
+  border-radius: var(--border-radius-sm);
+}
+
+.iccb-themes__controls {
+  position: absolute;
+  right: 12px;
+  bottom: 7px;
+  left: 12px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.58);
+  font-family: var(--font-numbers);
+  font-size: 0.63rem;
+  letter-spacing: 0.08em;
 }
 
-
-/* ============================================================
-   CARD HOVER GRADIENT
-   ============================================================ */
-
-.theme-card::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  background:
-    linear-gradient(135deg,
-      var(--dna-gold),
-      var(--cellular-red),
-      var(--molecular-blue));
-
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity var(--transition-med);
-  z-index: 0;
+.iccb-themes__motion {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-white);
+  font: 600 0.75rem var(--font-body);
+  transition: background var(--transition-fast), border-color var(--transition-fast);
 }
 
-.theme-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--shadow-md);
+.iccb-themes__motion:hover {
+  border-color: rgba(214, 178, 76, 0.55);
+  background: rgba(214, 178, 76, 0.08);
 }
 
-.theme-card:hover::before {
-  opacity: 1;
+.iccb-themes__motion:focus-visible,
+.iccb-theme-card:focus-visible {
+  outline: 3px solid rgba(214, 178, 76, 0.78);
+  outline-offset: 3px;
 }
 
-/* ============================================================
-   CARD CONTENT
-   ============================================================ */
-
-.theme-card>* {
+.iccb-theme-card {
+  --theme-accent: #967327;
   position: relative;
   z-index: 1;
-}
-
-/* ============================================================
-   THEME NUMBER
-   ============================================================ */
-
-.theme-number {
-  display: block;
-  font-family: var(--font-numbers);
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: rgba(214, 178, 76, 0.65);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-
-/* ============================================================
-   THEME ICON
-   ============================================================ */
-
-.theme-icon {
-  width: 42px;
-  height: 42px;
   display: flex;
+  /* min-height: 112px; */
+  align-items: center;
+  gap: 14px;
+  padding: 18px 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-sm);
+  background: var(--glass-bg);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+  color: var(--text-white);
+  text-align: left;
+  transition: border-color 280ms ease, box-shadow 280ms ease, background 280ms ease;
+}
+
+.iccb-theme-card[data-theme="0"] { --theme-accent: #967327; grid-column: 1; grid-row: 1; }
+.iccb-theme-card[data-theme="1"] { --theme-accent: #315f9c; grid-column: 1; grid-row: 2; }
+.iccb-theme-card[data-theme="2"] { --theme-accent: #675a93; grid-column: 1; grid-row: 3; }
+.iccb-theme-card[data-theme="3"] { --theme-accent: #992221; grid-column: 3; grid-row: 1; }
+.iccb-theme-card[data-theme="4"] { --theme-accent: #28798b; grid-column: 3; grid-row: 2; }
+.iccb-theme-card[data-theme="5"] { --theme-accent: #a66d32; grid-column: 3; grid-row: 3; }
+
+.iccb-theme-card:hover,
+.iccb-theme-card.is-active {
+  border-color: color-mix(in srgb, var(--theme-accent) 60%, transparent);
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+}
+
+.iccb-theme-card__icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--theme-accent) 48%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--theme-accent) 12%, transparent);
+  color: var(--theme-accent);
+  font-size: 1rem;
+  transition: background 280ms ease, border-color 280ms ease;
+}
+
+.iccb-theme-card__icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.iccb-theme-card.is-active .iccb-theme-card__icon {
+  border-color: color-mix(in srgb, var(--theme-accent) 68%, transparent);
+  background: color-mix(in srgb, var(--theme-accent) 20%, transparent);
+}
+
+.iccb-theme-card__copy {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.iccb-theme-card__name {
+  color: var(--text-white);
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.iccb-theme-card__description {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.iccb-theme-card__marker {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: var(--theme-accent);
+  opacity: 0.68;
+}
+
+.iccb-theme-card.is-active .iccb-theme-card__marker {
+  opacity: 1;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--theme-accent) 18%, transparent);
+}
+
+.iccb-themes__details {
+  --theme-accent: #967327;
+  display: flex;
+  min-height: 86px;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 8px;
-  font-size: 1.9rem;
-  line-height: 1;
-  color: var(--molecular-blue);
-  transition:
-    transform var(--transition-med),
-    color var(--transition-med),
-    filter var(--transition-med);
-  filter:
-    drop-shadow(0 3px 6px rgba(70, 150, 230, 0.20));
+  gap: 14px;
+  max-width: 720px;
+  margin: 20px auto 0;
+  padding: 15px 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  text-align: left;
 }
 
-
-/* ============================================================
-   ICON ITSELF
-   ============================================================ */
-
-.theme-icon i {
-  display: block;
-  line-height: 1;
-  font-style: normal;
+.iccb-themes__details-indicator {
+  width: 4px;
+  height: 38px;
+  flex: 0 0 4px;
+  border-radius: 2px;
+  background: var(--theme-accent);
+  transition: background 280ms ease;
 }
 
-
-/* ============================================================
-   ICON HOVER
-   ============================================================ */
-
-.theme-card:hover .theme-icon {
-  transform: scale(1.2);
-  color: var(--dna-gold);
-  filter:
-    drop-shadow(0 4px 10px rgba(214, 178, 76, 0.35));
-}
-
-
-/* ============================================================
-   THEME NAME
-   ============================================================ */
-
-.theme-name {
+.iccb-themes__details-title {
+  margin: 0 0 2px;
+  color: var(--theme-accent);
   font-family: var(--font-heading);
+  font-size: 0.98rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--text-white);
-  line-height: 1.35;
+  line-height: 1.4;
+  transition: color 280ms ease;
+}
+
+.iccb-themes__details-copy {
   margin: 0;
-  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
 
 
@@ -3633,21 +3735,6 @@ button {
     margin-bottom: 16px;
   }
 
-  .themes-grid {
-    gap: 16px;
-  }
-
-  .theme-card {
-    min-height: 104px;
-    padding: 20px 14px;
-  }
-
-  .theme-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 1.9rem;
-  }
-
   .speakers-grid {
     gap: 18px;
   }
@@ -3800,10 +3887,6 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .themes-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .speakers-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3816,11 +3899,6 @@ button {
   .highlight-card,
   .why-card {
     padding: 20px 16px;
-  }
-
-  .theme-card {
-    min-height: 100px;
-    padding: 18px 12px;
   }
 
   .committee-card {
@@ -3935,11 +4013,6 @@ button {
   /* Why Attend */
   .why-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  /* Themes */
-  .themes-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Speakers */
@@ -4264,20 +4337,9 @@ button {
 
   .highlight-card,
   .why-card,
-  .theme-card,
   .speaker-card,
   .committee-card {
     padding: 17px 14px;
-  }
-
-  .theme-card {
-    min-height: 100px;
-  }
-
-  .theme-icon {
-    width: 40px;
-    height: 40px;
-    font-size: 1.8rem;
   }
 
   .speaker-card .avatar-sm {
@@ -4514,22 +4576,6 @@ button {
     height: 96px;
   }
 
-  .themes-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .theme-card {
-    min-height: 96px;
-    padding: 14px 9px;
-  }
-
-  .theme-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1.65rem;
-  }
-
   #back-to-top {
     bottom: 20px;
     right: 20px;
@@ -4556,21 +4602,124 @@ button {
     padding: 76px 12px 32px;
   }
 
-  .themes-grid {
-    gap: 8px;
-  }
-
-  .theme-card {
-    min-height: 104px;
-    padding: 14px 8px;
-  }
-
-  .theme-name {
-    font-size: 0.82rem;
-  }
-
   .committee-card,
   .speaker-card {
     padding: 16px 12px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .iccb-themes__stage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 12px;
+    min-height: 0;
+  }
+
+  .iccb-themes__dna {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: 340px;
+    order: -1;
+  }
+
+  .iccb-themes__canvas {
+    min-height: 300px;
+  }
+
+  .iccb-theme-card[data-theme] {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .iccb-themes__header {
+    margin-bottom: 22px;
+  }
+
+  .iccb-themes__stage {
+    gap: 10px;
+  }
+
+  .iccb-themes__dna {
+    height: 286px;
+  }
+
+  .iccb-themes__canvas {
+    min-height: 250px;
+  }
+
+  .iccb-themes__controls {
+    gap: 8px;
+    font-size: 0.57rem;
+  }
+
+  .iccb-theme-card[data-theme] {
+    gap: 9px;
+    padding: 13px 10px;
+  }
+
+  .iccb-theme-card__icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+    font-size: 0.86rem;
+  }
+
+  .iccb-theme-card__name {
+    font-size: 0.82rem;
+  }
+
+  .iccb-theme-card__description {
+    font-size: 0.71rem;
+  }
+
+  .iccb-theme-card__marker {
+    width: 6px;
+    height: 6px;
+    flex-basis: 6px;
+  }
+
+  .iccb-themes__details {
+    justify-content: flex-start;
+    margin-top: 16px;
+    padding: 14px 12px;
+  }
+
+}
+
+@media (max-width: 390px) {
+  .iccb-themes__stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .iccb-themes__dna {
+    grid-column: 1;
+  }
+
+  .iccb-theme-card[data-theme] {
+    min-height: 0;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .iccb-theme-card__name {
+    font-size: 0.86rem;
+  }
+
+  .iccb-theme-card__description {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iccb-theme-card,
+  .iccb-theme-card__icon,
+  .iccb-theme-card__marker,
+  .iccb-themes__details-indicator,
+  .iccb-themes__details-title {
+    animation: none;
+    transition-duration: 0.01ms;
   }
 }

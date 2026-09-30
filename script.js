@@ -213,18 +213,380 @@
 
 
 // ============================================================
+// SCIENTIFIC THEMES — Interactive DNA helix
+// ============================================================
+(function initScientificThemes() {
+  const section = document.querySelector('.iccb-themes');
+  const canvas = document.getElementById('iccb-themes-canvas');
+  if (!section || !canvas) return;
+
+  const context = canvas.getContext('2d');
+  if (!context) return;
+
+  const themeButtons = Array.from(section.querySelectorAll('.iccb-theme-card'));
+  const details = section.querySelector('.iccb-themes__details');
+  const detailsContent = section.querySelector('.iccb-themes__details-content');
+  const detailsTitle = section.querySelector('.iccb-themes__details-title');
+  const detailsCopy = section.querySelector('.iccb-themes__details-copy');
+  const motionButton = section.querySelector('.iccb-themes__motion');
+  const motionIcon = motionButton.querySelector('i');
+  const motionText = motionButton.querySelector('span');
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const themes = themeButtons.map((button, index) => ({
+    name: button.querySelector('.iccb-theme-card__name').textContent.trim(),
+    // description: button.querySelector('.iccb-theme-card__description').textContent.trim(),
+    color: getComputedStyle(button).getPropertyValue('--theme-accent').trim(),
+    side: index < 3 ? 'L' : 'R',
+    row: index % 3
+  }));
+
+  let width = 0;
+  let height = 0;
+  let pixelRatio = 1;
+  let rotation = 0;
+  let velocity = 0;
+  let activeTheme = null;
+  let frameId = 0;
+  let lastFrameTime = 0;
+  let isVisible = false;
+  let isDragging = false;
+  let pointerX = 0;
+  let userPaused = false;
+
+  const strandColors = {
+    gold: [150, 115, 39],
+    blue: [49, 95, 156],
+    violet: [112, 88, 133]
+  };
+
+  function rgb(color) {
+    const value = color.replace('#', '');
+    return [0, 2, 4].map(offset => parseInt(value.slice(offset, offset + 2), 16));
+  }
+
+  function mix(first, second, amount) {
+    return first.map((value, index) => value + (second[index] - value) * amount);
+  }
+
+  function rgba(color, alpha) {
+    return `rgba(${color[0] | 0}, ${color[1] | 0}, ${color[2] | 0}, ${alpha})`;
+  }
+
+  function setMotionControl() {
+    const reduced = motionPreference.matches;
+    motionButton.disabled = reduced;
+    motionButton.setAttribute('aria-pressed', String(userPaused || reduced));
+    motionButton.setAttribute('aria-label', reduced
+      ? 'Automatic motion disabled by reduced motion preference'
+      : `${userPaused ? 'Start' : 'Pause'} rotation`);
+    motionIcon.className = `fa-solid ${userPaused || reduced ? 'fa-play' : 'fa-pause'}`;
+    motionText.textContent = reduced ? 'Reduced motion' : userPaused ? 'Start rotation' : 'Pause rotation';
+  }
+
+  function shouldAnimate() {
+    return isVisible && !document.hidden && !userPaused && !motionPreference.matches;
+  }
+
+  function drawHelix() {
+    if (!width || !height) return;
+
+    context.clearRect(0, 0, width, height);
+    const top = 28;
+    const helixHeight = height - top * 2;
+    const centerX = width / 2;
+    const radius = Math.min(width * 0.34, 105);
+    const active = activeTheme === null ? null : themes[activeTheme];
+    const themeColor = active ? rgb(active.color) : null;
+    const isWide = window.matchMedia('(min-width: 1101px)').matches;
+
+    if (active) {
+      const bandTop = top + active.row * helixHeight / 3;
+      const band = context.createLinearGradient(0, bandTop, 0, bandTop + helixHeight / 3);
+      band.addColorStop(0, rgba(themeColor, 0));
+      band.addColorStop(0.5, rgba(themeColor, 0.085));
+      band.addColorStop(1, rgba(themeColor, 0));
+      context.fillStyle = band;
+      context.fillRect(0, bandTop, width, helixHeight / 3);
+    }
+
+    if (isWide) {
+      themes.forEach((theme, index) => {
+        const y = top + (theme.row + 0.5) * helixHeight / 3;
+        const selected = index === activeTheme;
+        context.strokeStyle = rgba(rgb(theme.color), selected ? 0.7 : 0.2);
+        context.lineWidth = selected ? 1.35 : 0.9;
+        context.setLineDash([2, 6]);
+        context.beginPath();
+        if (theme.side === 'L') {
+          context.moveTo(0, y);
+          context.lineTo(centerX - radius * 1.05, y);
+        } else {
+          context.moveTo(width, y);
+          context.lineTo(centerX + radius * 1.05, y);
+        }
+        context.stroke();
+      });
+      context.setLineDash([]);
+    }
+
+    const particles = [];
+    const pointCount = 120;
+    const rungCount = 24;
+    const rungDots = 6;
+    const turns = 2.25;
+    const rowIsActive = progress => active !== null && active.row === Math.min(2, Math.floor(progress * 3));
+
+    for (let strand = 0; strand < 2; strand++) {
+      for (let point = 0; point < pointCount; point++) {
+        const progress = point / (pointCount - 1);
+        const phase = progress * turns * Math.PI * 2 + rotation + strand * Math.PI;
+        const envelope = 0.6 + 0.4 * Math.sin(Math.PI * progress);
+        const highlighted = rowIsActive(progress);
+        const baseColor = strand === 0 ? strandColors.gold : strandColors.blue;
+        const color = highlighted ? mix(baseColor, themeColor, 0.5) : baseColor;
+        particles.push({
+          x: centerX + radius * envelope * Math.cos(phase),
+          y: top + progress * helixHeight,
+          z: Math.sin(phase) * envelope,
+          color,
+          kind: 0,
+          highlighted
+        });
+      }
+    }
+
+    for (let rung = 0; rung < rungCount; rung++) {
+      const progress = (rung + 0.5) / rungCount;
+      const phase = progress * turns * Math.PI * 2 + rotation;
+      const envelope = 0.6 + 0.4 * Math.sin(Math.PI * progress);
+      const firstX = centerX + radius * envelope * Math.cos(phase);
+      const secondX = centerX - radius * envelope * Math.cos(phase);
+      const depth = Math.sin(phase) * envelope;
+      const y = top + progress * helixHeight;
+      const highlighted = rowIsActive(progress);
+
+      for (let dot = 0; dot <= rungDots; dot++) {
+        const amount = dot / rungDots;
+        const baseColor = amount < 0.5
+          ? mix(strandColors.gold, strandColors.violet, amount * 2)
+          : mix(strandColors.violet, strandColors.blue, (amount - 0.5) * 2);
+        particles.push({
+          x: firstX + (secondX - firstX) * amount,
+          y,
+          z: depth * (1 - 2 * amount),
+          color: highlighted ? mix(baseColor, themeColor, 0.55) : baseColor,
+          kind: dot === 0 || dot === rungDots ? 2 : 1,
+          highlighted
+        });
+      }
+    }
+
+    particles.sort((first, second) => first.z - second.z);
+    context.globalCompositeOperation = 'lighter';
+    particles.forEach(particle => {
+      const depth = (particle.z + 1) / 2;
+      const alpha = (0.28 + 0.72 * depth) * (particle.highlighted ? 1 : 0.88);
+      let pointRadius = particle.kind === 0
+        ? 1.4 + 1.9 * depth
+        : particle.kind === 1
+          ? 0.9 + 1.2 * depth
+          : 2.3 + 2.1 * depth;
+      if (particle.highlighted) pointRadius *= 1.15;
+
+      context.fillStyle = rgba(particle.color, alpha * 0.13);
+      context.beginPath();
+      context.arc(particle.x, particle.y, pointRadius * 2.8, 0, Math.PI * 2);
+      context.fill();
+
+      context.fillStyle = rgba(particle.color, alpha);
+      context.beginPath();
+      context.arc(particle.x, particle.y, pointRadius, 0, Math.PI * 2);
+      context.fill();
+
+      if (particle.kind === 2) {
+        context.fillStyle = `rgba(255, 255, 255, ${alpha * 0.76})`;
+        context.beginPath();
+        context.arc(particle.x, particle.y, pointRadius * 0.38, 0, Math.PI * 2);
+        context.fill();
+      }
+    });
+    context.globalCompositeOperation = 'source-over';
+  }
+
+  function render(time) {
+    frameId = 0;
+    const elapsed = Math.min((time - lastFrameTime) / 1000 || 0.016, 0.05);
+    lastFrameTime = time;
+    if (!isDragging) {
+      velocity += ((shouldAnimate() ? 0.7 : 0) - velocity) * Math.min(1, elapsed * 2.5);
+      rotation += velocity * elapsed;
+    }
+    drawHelix();
+
+    if (shouldAnimate() || Math.abs(velocity) > 0.001) {
+      frameId = requestAnimationFrame(render);
+    }
+  }
+
+  function requestRender() {
+    if (!frameId) frameId = requestAnimationFrame(render);
+  }
+
+  function resizeCanvas() {
+    const bounds = canvas.getBoundingClientRect();
+    if (!bounds.width || !bounds.height) return;
+    width = bounds.width;
+    height = bounds.height;
+    pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * pixelRatio);
+    canvas.height = Math.round(height * pixelRatio);
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    requestRender();
+  }
+
+  function selectTheme(index) {
+    if (!themes[index] || activeTheme === index) return;
+    activeTheme = index;
+    themeButtons.forEach((button, buttonIndex) => {
+      const selected = buttonIndex === index;
+      button.classList.toggle('is-active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
+    details.style.setProperty('--theme-accent', themes[index].color);
+    detailsTitle.textContent = themes[index].name;
+    detailsCopy.textContent = themes[index].description;
+    if (!motionPreference.matches && typeof detailsContent.animate === 'function') {
+      detailsContent.animate(
+        [{ opacity: 0.45, transform: 'translateY(3px)' }, { opacity: 1, transform: 'translateY(0)' }],
+        { duration: 260, easing: 'ease-out' }
+      );
+    }
+    requestRender();
+  }
+
+  themeButtons.forEach((button, index) => {
+    button.addEventListener('pointerenter', () => {
+      if (window.matchMedia('(hover: hover)').matches) selectTheme(index);
+    });
+    button.addEventListener('focus', () => selectTheme(index));
+    button.addEventListener('click', () => selectTheme(index));
+  });
+
+  canvas.addEventListener('pointerdown', event => {
+    isDragging = true;
+    pointerX = event.clientX;
+    velocity = 0;
+    canvas.setPointerCapture(event.pointerId);
+  });
+
+  canvas.addEventListener('pointermove', event => {
+    if (!isDragging) return;
+    const delta = event.clientX - pointerX;
+    rotation += delta * 0.012;
+    velocity = delta * 0.7;
+    pointerX = event.clientX;
+    requestRender();
+  });
+
+  function stopDragging() {
+    isDragging = false;
+  }
+
+  canvas.addEventListener('pointerup', stopDragging);
+  canvas.addEventListener('pointercancel', stopDragging);
+  canvas.addEventListener('lostpointercapture', stopDragging);
+
+  canvas.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    rotation += event.key === 'ArrowLeft' ? -0.25 : 0.25;
+    requestRender();
+  });
+
+  motionButton.addEventListener('click', () => {
+    if (motionPreference.matches) return;
+    userPaused = !userPaused;
+    velocity = Math.min(velocity, 0.7);
+    setMotionControl();
+    lastFrameTime = 0;
+    requestRender();
+  });
+
+  motionPreference.addEventListener('change', () => {
+    setMotionControl();
+    lastFrameTime = 0;
+    requestRender();
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    lastFrameTime = 0;
+    if (document.hidden && frameId) {
+      cancelAnimationFrame(frameId);
+      frameId = 0;
+    } else {
+      requestRender();
+    }
+  });
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(resizeCanvas).observe(canvas);
+  } else {
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+  }
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      isVisible = entries[0].isIntersecting;
+      lastFrameTime = 0;
+      if (isVisible) requestRender();
+      else if (frameId) {
+        cancelAnimationFrame(frameId);
+        frameId = 0;
+      }
+    }, { threshold: 0.05 }).observe(section);
+  } else {
+    isVisible = true;
+  }
+
+  setMotionControl();
+  resizeCanvas();
+})();
+
+
+// ============================================================
 // 2. SCROLL PROGRESS INDICATOR
 // ============================================================
 (function initScrollProgress() {
   const bar = document.getElementById('scroll-progress');
   if (!bar) return;
 
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = pct + '%';
-  }, { passive: true });
+  let updateFrame = 0;
+
+  function updateProgress() {
+    updateFrame = 0;
+    const scroller = document.scrollingElement || document.documentElement;
+    const viewportHeight = scroller.clientHeight || window.innerHeight;
+    const scrollableHeight = Math.max(0, scroller.scrollHeight - viewportHeight);
+    const progress = scrollableHeight > 0
+      ? Math.min(1, Math.max(0, scroller.scrollTop / scrollableHeight))
+      : 0;
+    bar.style.transform = `scaleX(${progress})`;
+  }
+
+  function scheduleUpdate() {
+    if (!updateFrame) updateFrame = requestAnimationFrame(updateProgress);
+  }
+
+  updateProgress();
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  window.addEventListener('pageshow', scheduleUpdate);
+  window.visualViewport?.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.visualViewport?.addEventListener('resize', scheduleUpdate, { passive: true });
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(scheduleUpdate).observe(document.documentElement);
+  }
 })();
 
 
@@ -666,7 +1028,7 @@
 // 18. HIGHLIGHT CARD STAGGER ON LOAD
 // ============================================================
 (function initHighlightStagger() {
-  const cards = document.querySelectorAll('.highlight-card, .why-card, .theme-card');
+  const cards = document.querySelectorAll('.highlight-card, .why-card');
   const staggerObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, idx) => {
       if (entry.isIntersecting) {
