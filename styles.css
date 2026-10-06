@@ -1950,58 +1950,6 @@ button {
   justify-content: center;
 }
 
-/* Committee Card */
-/* .committee-card {
-  width: 100%;
-  box-sizing: border-box;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--border-radius);
-  padding: 22px 18px;
-  text-align: center;
-  transition: all var(--transition-med);
-}
-
-.committee-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(214, 178, 76, 0.25);
-  background: rgba(214, 178, 76, 0.04);
-} */
-
-/* .c-name {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--text-white);
-  margin-bottom: 6px;
-} */
-
-/* .committee-role {
-  font-size: 0.78rem;
-  color: var(--dna-gold);
-  font-weight: 600;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-} */
-
-/* .c-role {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.4;
-} */
-
-/* Chief Patron */
-/* .committee-card.chief {
-  background: linear-gradient(135deg, rgba(92, 15, 29, 0.25), rgba(14, 35, 97, 0.2));
-  border-color: rgba(214, 178, 76, 0.3);
-}
-
-.committee-card .c-country {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.4);
-} */
-
 /* ============================================================
    VENUE
    ============================================================ */
