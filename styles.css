@@ -1647,12 +1647,41 @@ button {
   transition: border-color 280ms ease, box-shadow 280ms ease, background 280ms ease;
 }
 
-.iccb-theme-card[data-theme="0"] { --theme-accent: #967327; grid-column: 1; grid-row: 1; }
-.iccb-theme-card[data-theme="1"] { --theme-accent: #315f9c; grid-column: 1; grid-row: 2; }
-.iccb-theme-card[data-theme="2"] { --theme-accent: #675a93; grid-column: 1; grid-row: 3; }
-.iccb-theme-card[data-theme="3"] { --theme-accent: #992221; grid-column: 3; grid-row: 1; }
-.iccb-theme-card[data-theme="4"] { --theme-accent: #28798b; grid-column: 3; grid-row: 2; }
-.iccb-theme-card[data-theme="5"] { --theme-accent: #a66d32; grid-column: 3; grid-row: 3; }
+.iccb-theme-card[data-theme="0"] {
+  --theme-accent: #967327;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.iccb-theme-card[data-theme="1"] {
+  --theme-accent: #315f9c;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.iccb-theme-card[data-theme="2"] {
+  --theme-accent: #675a93;
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.iccb-theme-card[data-theme="3"] {
+  --theme-accent: #992221;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.iccb-theme-card[data-theme="4"] {
+  --theme-accent: #28798b;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.iccb-theme-card[data-theme="5"] {
+  --theme-accent: #a66d32;
+  grid-column: 3;
+  grid-row: 3;
+}
 
 .iccb-theme-card:hover,
 .iccb-theme-card.is-active {
@@ -1781,7 +1810,8 @@ button {
   gap: 18px;
 }
 
-.speaker-card {
+.speaker-card,
+.committee-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
@@ -1792,14 +1822,16 @@ button {
   overflow: hidden;
 }
 
-.speaker-card:hover {
+.speaker-card:hover,
+.committee-card:hover {
   transform: translateY(-8px);
   border-color: rgba(214, 178, 76, 0.3);
   box-shadow: var(--shadow-gold);
   background: rgba(214, 178, 76, 0.04);
 }
 
-.speaker-card .avatar-sm {
+.speaker-card .avatar-sm,
+.committee-card .avatar-sm {
   width: clamp(88px, 9vw, 136px);
   height: clamp(88px, 9vw, 136px);
   aspect-ratio: 1 / 1;
@@ -1814,18 +1846,21 @@ button {
   transition: all var(--transition-med);
 }
 
-.speaker-card:hover .avatar-sm {
+.speaker-card:hover .avatar-sm,
+.committee-card:hover .avatar-sm {
   border-color: rgba(214, 178, 76, 0.6);
   box-shadow: var(--glow-gold);
 }
 
-.speaker-card .avatar-sm svg {
+.speaker-card .avatar-sm svg,
+.committee-card .avatar-sm svg {
   width: 50px;
   height: 50px;
   opacity: 0.6;
 }
 
-.speaker-card .avatar-sm img {
+.speaker-card .avatar-sm img,
+.committee-card .avatar-sm img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1833,7 +1868,8 @@ button {
   display: block;
 }
 
-.speaker-card .s-name {
+.speaker-card .s-name,
+.committee-card .c-name {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
@@ -1841,20 +1877,15 @@ button {
   margin-bottom: 6px;
 }
 
-.speaker-card .s-role {
-  font-size: 0.8rem;
-  color: var(--dna-gold);
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.speaker-card .s-institution {
+.speaker-card .s-role,
+.committee-card .c-role {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.55);
   margin-bottom: 4px;
 }
 
-.speaker-card .s-country {
+.speaker-card .s-country,
+.committee-card .c-country {
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.4);
 }
@@ -1920,7 +1951,7 @@ button {
 }
 
 /* Committee Card */
-.committee-card {
+/* .committee-card {
   width: 100%;
   box-sizing: border-box;
   background: var(--glass-bg);
@@ -1935,55 +1966,41 @@ button {
   transform: translateY(-4px);
   border-color: rgba(214, 178, 76, 0.25);
   background: rgba(214, 178, 76, 0.04);
-}
+} */
 
-/* Avatar */
-.committee-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto 16px;
-  background: linear-gradient(135deg, var(--burgundy), var(--genomics-blue));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid rgba(214, 178, 76, 0.2);
-}
-
-.committee-avatar svg {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 12px;
-}
-
-.committee-name {
+/* .c-name {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--text-white);
   margin-bottom: 6px;
-}
+} */
 
-.committee-role {
+/* .committee-role {
   font-size: 0.78rem;
   color: var(--dna-gold);
   font-weight: 600;
   margin-bottom: 4px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-}
+} */
 
-.committee-dept {
+/* .c-role {
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.5);
   line-height: 1.4;
-}
+} */
 
 /* Chief Patron */
-.committee-card.chief {
+/* .committee-card.chief {
   background: linear-gradient(135deg, rgba(92, 15, 29, 0.25), rgba(14, 35, 97, 0.2));
   border-color: rgba(214, 178, 76, 0.3);
 }
+
+.committee-card .c-country {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+} */
 
 /* ============================================================
    VENUE
@@ -3736,11 +3753,13 @@ button {
     gap: 18px;
   }
 
-  .speaker-card {
+  .speaker-card,
+  .committee-card {
     padding: 18px 12px;
   }
 
-  .speaker-card .avatar-sm {
+  .speaker-card .avatar-sm,
+  .committee-card .avatar-sm {
     width: 114px;
     height: 114px;
     margin-bottom: 14px;
@@ -3754,15 +3773,9 @@ button {
     gap: 16px;
   }
 
-  .committee-card {
+  /* .committee-card {
     padding: 20px 16px;
-  }
-
-  .committee-avatar {
-    width: 68px;
-    height: 68px;
-    margin-bottom: 10px;
-  }
+  } */
 
   .venue-grid,
   .contact-grid {
@@ -3854,7 +3867,8 @@ button {
     flex-shrink: 0;
   }
 
-  .nav-mobile.open, #hero .hero-actions {
+  .nav-mobile.open,
+  #hero .hero-actions {
     display: flex;
   }
 
@@ -3888,7 +3902,8 @@ button {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .speaker-card .avatar-sm {
+  .speaker-card .avatar-sm,
+  .committee-card .avatar-sm {
     width: 104px;
     height: 104px;
   }
@@ -3898,9 +3913,9 @@ button {
     padding: 20px 16px;
   }
 
-  .committee-card {
+  /* .committee-card {
     padding: 18px 14px;
-  }
+  } */
 
   .committee-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -4332,6 +4347,10 @@ button {
     padding-top: 4rem;
   }
 
+  /* .committee-card {
+    padding: 17px 14px;
+  } */
+
   .highlight-card,
   .why-card,
   .speaker-card,
@@ -4339,16 +4358,11 @@ button {
     padding: 17px 14px;
   }
 
-  .speaker-card .avatar-sm {
+  .speaker-card .avatar-sm,
+  .committee-card .avatar-sm {
     width: 100px;
     height: 100px;
     margin-bottom: 12px;
-  }
-
-  .committee-avatar {
-    width: 62px;
-    height: 62px;
-    margin-bottom: 10px;
   }
 
   .committee-group {
@@ -4568,7 +4582,8 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .speaker-card .avatar-sm {
+  .speaker-card .avatar-sm,
+  .committee-card .avatar-sm {
     width: 96px;
     height: 96px;
   }
@@ -4706,6 +4721,7 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .iccb-theme-card,
   .iccb-theme-card__icon,
   .iccb-theme-card__marker,

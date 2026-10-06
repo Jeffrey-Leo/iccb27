@@ -1083,7 +1083,8 @@
    ============================================================ */
 
 (function initConferenceCountdown() {
-  const targetDate = new Date("February 4, 2027 00:00:00").getTime();
+  // Conference start: 4 February 2027, 9:30 AM IST (UTC+5:30)
+  const targetDate = new Date("2027-02-04T09:30:00+05:30").getTime();
 
   const daysEl = document.getElementById("countdown-days");
   const hoursEl = document.getElementById("countdown-hours");

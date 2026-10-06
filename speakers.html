@@ -1,30 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="International Conference on Cancer Biology (ICCB 2027) — Molecular Mechanisms, Genomics & Novel Therapeutics. February 4–6, 2027 at IIT Madras, Chennai, India. Hosted by Hyundai Centre for Cancer Genomics." />
-    <meta name="keywords"
-        content="ICCB 2027, Cancer Biology, IIT Madras, Genomics, Cancer Conference, Precision Medicine, Oncology" />
-    <meta name="author" content="Hyundai Centre for Cancer Genomics, IIT Madras" />
-    <meta property="og:title" content="ICCB 2027 — International Conference on Cancer Biology" />
-    <meta property="og:description"
-        content="Molecular Mechanisms, Genomics & Novel Therapeutics | Feb 4–6, 2027 | IIT Madras, Chennai" />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#250915" />
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+        content="International Conference on Cancer Biology (ICCB 2027) — Molecular Mechanisms, Genomics &amp; Novel Therapeutics. February 4–6, 2027 at IIT Madras, Chennai, India. Hosted by Hyundai Centre for Cancer Genomics."
+        name="description" />
+    <meta content="ICCB 2027, Cancer Biology, IIT Madras, Genomics, Cancer Conference, Precision Medicine, Oncology"
+        name="keywords" />
+    <meta content="Hyundai Centre for Cancer Genomics, IIT Madras" name="author" />
+    <meta content="ICCB 2027 — International Conference on Cancer Biology" property="og:title" />
+    <meta content="Molecular Mechanisms, Genomics &amp; Novel Therapeutics | Feb 4–6, 2027 | IIT Madras, Chennai"
+        property="og:description" />
+    <meta content="website" property="og:type" />
+    <meta content="#250915" name="theme-color" />
     <title>ICCB 2027 — International Conference on Cancer Biology | IIT Madras</title>
-
     <!-- Design System -->
-    <link rel="stylesheet" href="styles.css" />
-
+    <link href="styles.css" rel="stylesheet" />
     <!-- Favicon SVG inline -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23992221'/><text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-weight='bold'>iC</text></svg>" />
+    <link
+        href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;circle cx='50' cy='50' r='45' fill='%23992221'/&gt;&lt;text y='.9em' font-size='60' x='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-weight='bold'&gt;iC&lt;/text&gt;&lt;/svg&gt;"
+        rel="icon" />
 </head>
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const speakersGrid = document.querySelector(".speakers-grid");
@@ -71,50 +70,46 @@
     <!-- ============================================================
        SCROLL PROGRESS BAR
        ============================================================ -->
-    <div id="scroll-progress" aria-hidden="true"></div>
-
+    <div aria-hidden="true" id="scroll-progress"></div>
     <!-- ============================================================
        NAVIGATION
        ============================================================ -->
-    <nav id="navbar" role="navigation" aria-label="Main navigation" class="scrolled">
+    <nav aria-label="Main navigation" class="scrolled" id="navbar" role="navigation">
         <div class="nav-container">
             <!-- Logo -->
-            <a href="./index.html" class="nav-logo" aria-label="ICCB 2027 Home">
-                <img src="assets/IIT_Madras_Logo.png" alt="IIT Madras Logo" />
+            <a aria-label="ICCB 2027 Home" class="nav-logo" href="./index.html">
+                <img alt="IIT Madras Logo" src="assets/IIT_Madras_Logo.png" />
                 <div class="nav-logo-text">
                     <span class="conf-name">ICCB 2027</span>
                     <span class="conf-location">IIT Madras</span>
                 </div>
-                <span class="nav-logo-separator" aria-hidden="true"></span>
+                <span aria-hidden="true" class="nav-logo-separator"></span>
                 <div class="nav-logo-text">
                     <span class="conf-subtxt">In association</span>
                     <span class="conf-subtxt">with</span>
                 </div>
-                <span class="nav-logo-separator" aria-hidden="true"></span>
-                <img id="hyundaiLogo" src="assets/hyundai.jpg" alt="Hyundai Logo" />
+                <span aria-hidden="true" class="nav-logo-separator"></span>
+                <img alt="Hyundai Logo" id="hyundaiLogo" src="assets/hyundai.jpg" />
             </a>
-
             <!-- Desktop Links -->
             <div class="nav-links" role="menubar">
                 <a href="./index.html#about" role="menuitem">About</a>
-                <a href="#" role="menuitem" id="active">Speakers</a>
+                <a href="#" id="active" role="menuitem">Speakers</a>
                 <a href="./index.html#themes" role="menuitem">Themes</a>
                 <a href="./organizing_committee.html" role="menuitem">Committee</a>
                 <!-- <a href="./index.html#venue" role="menuitem">Venue</a> -->
                 <a href="./index.html#timeline" role="menuitem">Timeline</a>
                 <!-- <a href="./index.html#sponsors" role="menuitem">Sponsors</a> -->
                 <a href="./index.html#contact" role="menuitem">Contact</a>
-                <a href="./index.html#register" class="nav-cta" role="menuitem" id="nav-register-btn">Register Now</a>
+                <a class="nav-cta" href="./index.html#register" id="nav-register-btn" role="menuitem">Register Now</a>
             </div>
-
             <!-- Hamburger -->
-            <button class="nav-hamburger" id="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+            <button aria-expanded="false" aria-label="Toggle mobile menu" class="nav-hamburger" id="hamburger-btn">
                 <span></span><span></span><span></span>
             </button>
         </div>
-
         <!-- Mobile Nav Overlay -->
-        <div class="nav-mobile" id="mobile-nav" role="menu" aria-hidden="true">
+        <div aria-hidden="true" class="nav-mobile" id="mobile-nav" role="menu">
             <a href="./index.html#about" role="menuitem">About</a>
             <a href="./index.html#highlights" role="menuitem">Highlights</a>
             <a href="#" role="menuitem">Speakers</a>
@@ -124,14 +119,13 @@
             <a href="./index.html#timeline" role="menuitem">Timeline</a>
             <a href="./index.html#faq" role="menuitem">FAQ</a>
             <a href="./index.html#contact" role="menuitem">Contact</a>
-            <a href="./index.html#register" class="mob-cta" role="menuitem">Register Now</a>
+            <a class="mob-cta" href="./index.html#register" role="menuitem">Register Now</a>
         </div>
     </nav>
-
     <!-- ============================================================
        KEYNOTE SPEAKERS
        ============================================================ -->
-    <section id="speakers" class="section" aria-label="Keynote speakers">
+    <section aria-label="Keynote speakers" class="section" id="speakers">
         <div class="container">
             <div class="section-header reveal">
                 <!-- <span class="section-tag">Distinguished Faculty</span> -->
@@ -141,7 +135,6 @@
                 </p>
                 <div class="section-divider"></div>
             </div>
-
             <!-- Featured Speaker --
       <div class="speakers-featured reveal">
         <div class="featured-speaker-card">
@@ -211,481 +204,399 @@
           </div>
         </div>
       </div>-->
-
             <!-- More Speakers Grid -->
             <div class="speakers-grid">
-                <!-- 1 -->
                 <div class="speaker-card reveal reveal-delay-1">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Tej Mallu A.C.jpg" alt="Tej Mallu A.C." />
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Tej Mallu A.C." src="assets/speakers/Tej-Mallu.jpg" />
                     </div>
-                    <h4 class="s-name">Tej Mallu A.C</h4>
-                    <p class="s-institution">University of Glasgow, UK</p>
-                    <p class="s-country">🌍 International</p>
+                    <h4 class="s-name">Abhiram Charan Tej Mallu</h4>
+                    <p class="s-role">Postdoctoral Research Associate, University of Glasgow</p>
+                    <p class="s-country"><img alt="UK flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/gb.png"
+                            srcset="https://flagcdn.com/40x30/gb.png 2x, https://flagcdn.com/60x45/gb.png 3x"
+                            width="20" /> UK</p>
                 </div>
-                <!-- 2 -->
+
                 <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Ajay Tijore.jpg" alt="Ajay Tijore" />
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Ajay Tijore" src="assets/speakers/Ajay-Tijore.jpg" />
                     </div>
                     <h4 class="s-name">Ajay Tijore</h4>
-                    <p class="s-institution">IISc, Bangalore</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Assistant Professor, Department of Bioengineering, IISc</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 4 -->
-                <div class="speaker-card reveal reveal-delay-4">
+
+                <div class="speaker-card reveal reveal-delay-3">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
+                        <img src="assets/speakers/Annapoorni-Rangarajan.jpg" alt="Annapoorni Rangarajan" />
                     </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Ankur Sharma.jpg" alt="Ankur Sharma" />
-                    </div> -->
-                    <h4 class="s-name">Ankur Sharma</h4>
-                    <p class="s-institution">The Kinghorn Cancer Centre, Australia</p>
-                    <p class="s-country">🌍 International</p>
-                </div>
-                <!-- 5 -->
-                <div class="speaker-card reveal reveal-delay-1">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Annapoorni Rangarajan.jpg" alt="Annapoorni Rangarajan" />
-                    </div> -->
                     <h4 class="s-name">Annapoorni Rangarajan</h4>
-                    <p class="s-institution">IISc, Bangalore</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Professor, IISc, Bangalore</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 6 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Arafath K. Najumudeen.jpg" alt="Arafath K. Najumudeen" />
+
+                <div class="speaker-card reveal reveal-delay-4">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Arafath K. Najumudeen" src="assets/speakers/Arafath-Najumudeen.jpg" />
                     </div>
                     <h4 class="s-name">Arafath K. Najumudeen</h4>
-                    <p class="s-institution">University of Helsinki, Finland</p>
-                    <p class="s-country">🌍 International</p>
-                </div>
-                <!-- 7 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Aruna Korlimarla.jpg" alt="Aruna Korlimarla" />
-                    </div> -->
-                    <h4 class="s-name">Aruna Korlimarla</h4>
-                    <p class="s-institution">Sri Shankara Cancer Foundation, Bangalore</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
+                    <p class="s-role">Principal Investigator, HiLIFE, University of Helsinki</p>
+                    <p class="s-country"><img alt="Finland flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/fi.png"
+                            srcset="https://flagcdn.com/40x30/fi.png 2x, https://flagcdn.com/60x45/fi.png 3x"
+                            width="20" /> Finland
                     </p>
                 </div>
-                <!-- 8 -->
-                <div class="speaker-card reveal reveal-delay-4">
+
+                <div class="speaker-card reveal reveal-delay-1">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Binay Panda.jpg" alt="Binay Panda" />
+                        <img src="assets/speakers/Aruna-Korlimarla.jpg" alt="Aruna Korlimarla" />
+                    </div>
+                    <h4 class="s-name">Aruna Korlimarla</h4>
+                    <p class="s-role">Principal Scientist, Sri Shankara Cancer Foundation</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
+                </div>
+
+                <div class="speaker-card reveal reveal-delay-2">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Binay Panda" src="assets/speakers/Binay-Panda.jpg" />
                     </div>
                     <h4 class="s-name">Binay Panda</h4>
-                    <p class="s-institution">JNU, New Delhi</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Professor, School of Biotechnology, JNU, New Delhi</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 9 -->
-                <div class="speaker-card reveal reveal-delay-1">
+
+                <div class="speaker-card reveal reveal-delay-3">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
+                        <img src="assets/speakers/Biswajit.jpg" alt="Biswajit Dubashi" />
                     </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Biswajit Dubashi.jpg" alt="Biswajit Dubashi" />
-                    </div> -->
-                    <h4 class="s-name">Biswajit Dubashi</h4>
-                    <p class="s-institution">JIPMER, Pondicherry</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <h4 class="s-name">Biswajit</h4>
+                    <p class="s-role">Professor, JIPMER, Pondicherry</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 10 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Büşra Yüksel.jpg" alt="Büşra Yüksel" />
+
+                <div class="speaker-card reveal reveal-delay-4">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Büşra Yüksel" src="assets/speakers/Büşra-Yüksel.jpg" />
                     </div>
                     <h4 class="s-name">Büşra Yüksel</h4>
-                    <p class="s-institution">Goethe University Frankfurt, Germany</p>
-                    <p class="s-country">🌍 International</p>
+                    <p class="s-role">PhD Student, Goethe University Frankfurt</p>
+                    <p class="s-country"><img alt="Germany flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/de.png"
+                            srcset="https://flagcdn.com/40x30/de.png 2x, https://flagcdn.com/60x45/de.png 3x"
+                            width="20" /> Germany
+                    </p>
                 </div>
-                <!-- 12 -->
-                <div class="speaker-card reveal reveal-delay-4">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Daniel Murphy.jpg" alt="Daniel Murphy" />
-                    </div> -->
-                    <h4 class="s-name">Daniel Murphy</h4>
-                    <p class="s-institution">CRUK Beatson Institute, UK</p>
-                    <p class="s-country">🌍 International</p>
-                </div>
-                <!-- 13 -->
+
                 <div class="speaker-card reveal reveal-delay-1">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Gabriel Ichim.jpg" alt="Gabriel Ichim" />
+                        <img src="assets/speakers/Daniel-Murphy.jpg" alt="Daniel Murphy" />
+                    </div>
+                    <h4 class="s-name">Daniel Murphy</h4>
+                    <p class="s-role">Principal Investigator, CRUK Beatson Institute</p>
+                    <p class="s-country"><img alt="UK flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/gb.png"
+                            srcset="https://flagcdn.com/40x30/gb.png 2x, https://flagcdn.com/60x45/gb.png 3x"
+                            width="20" /> UK</p>
+                </div>
+
+                <div class="speaker-card reveal reveal-delay-2">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Gabriel Ichim" src="assets/speakers/Gabriel-Ichim.jpg" />
                     </div>
                     <h4 class="s-name">Gabriel Ichim</h4>
-                    <p class="s-institution">Center for Research on Cancer in Lyon</p>
-                    <p class="s-country">🌍 International</p>
+                    <p class="s-role">Research Director, Center for Research on Cancer in Lyon</p>
+                    <p class="s-country"><img alt="France flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/fr.png"
+                            srcset="https://flagcdn.com/40x30/fr.png 2x, https://flagcdn.com/60x45/fr.png 3x"
+                            width="20" /> France</p>
                 </div>
-                <!-- 14 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Kanaga Sabapathy.jpg" alt="Kanaga Sabapathy" />
+
+                <div class="speaker-card reveal reveal-delay-3">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Kanaga Sabapathy" src="assets/speakers/Kanaga-Sabapathy.jpg" />
                     </div>
                     <h4 class="s-name">Kanaga Sabapathy</h4>
-                    <p class="s-institution">NCC, Singapore</p>
-                    <p class="s-country">🌍 International</p>
+                    <p class="s-role">Professor and Head, NCC</p>
+                    <p class="s-country"><img alt="Singapore flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/sg.png"
+                            srcset="https://flagcdn.com/40x30/sg.png 2x, https://flagcdn.com/60x45/sg.png 3x"
+                            width="20" /> Singapore
+                    </p>
                 </div>
-                <!-- 15 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Kevin Joseph.jpg" alt="Kevin Joseph" />
+
+                <div class="speaker-card reveal reveal-delay-4">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Kevin Joseph" src="assets/speakers/Kevin-Joseph.jpg" />
                     </div>
                     <h4 class="s-name">Kevin Joseph</h4>
-                    <p class="s-institution">University of Freiburg, Germany</p>
-                    <p class="s-country">🌍 International</p>
-                </div>
-                <!-- 16 -->
-                <div class="speaker-card reveal reveal-delay-4">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Kumaravel Somasundaram" alt="Kumaravel Somasundaram" />
-                    </div> -->
-                    <h4 class="s-name">Kumaravel Somasundaram</h4>
-                    <p class="s-institution">IISc, Bangalore</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
+                    <p class="s-role">Head, Lab of NeuroEngineering, Medical Center - Univ. of Freiburg</p>
+                    <p class="s-country"><img alt="Germany flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/de.png"
+                            srcset="https://flagcdn.com/40x30/de.png 2x, https://flagcdn.com/60x45/de.png 3x"
+                            width="20" /> Germany
                     </p>
                 </div>
-                <!-- 17 -->
+
                 <div class="speaker-card reveal reveal-delay-1">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Maddika Subba Reddy.jpg" alt="Maddika Subba Reddy" />
+                        <img src="assets/speakers/Kumaravel-Somasundaram.jpg" alt="Kumaravel Somasundaram" />
+                    </div>
+                    <h4 class="s-name">Kumaravel Somasundaram</h4>
+                    <p class="s-role">Professor, IISc, Bangalore</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
+                </div>
+
+                <div class="speaker-card reveal reveal-delay-2">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Maddika Subba Reddy" src="assets/speakers/Maddika-Subba-Reddy.jpg" />
                     </div>
                     <h4 class="s-name">Maddika Subba Reddy</h4>
-                    <p class="s-institution">CDFD, Hyderabad</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Group Leader, CDFD, Hyderabad</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 19 -->
+
                 <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Murali Dharan Bashyam.jpg" alt="Murali Dharan Bashyam" />
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Murali Dharan Bashyam" src="assets/speakers/Murali-Dharan-Bashyam.jpg" />
                     </div>
                     <h4 class="s-name">Murali Dharan Bashyam</h4>
-                    <p class="s-institution">CDFD, Hyderabad</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Head, Lab of Molecular Oncology, CDFD, Hyderabad</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 20 -->
+
                 <div class="speaker-card reveal reveal-delay-4">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Nathiya Muthalagu.jpg" alt="Nathiya Muthalagu" />
+                        <img src="assets/speakers/Ramanuj-Dasgupta.jpg" alt="Ramanuj Dasgupta" />
                     </div>
-                    <h4 class="s-name">Nathiya Muthalagu</h4>
-                    <p class="s-institution">IIT Madras, Chennai</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
-                <!-- 22 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Ramanuj Dasgupta.jpg" alt="Ramanuj Dasgupta" />
-                    </div> -->
                     <h4 class="s-name">Ramanuj Dasgupta</h4>
-                    <p class="s-institution">University of Glasgow, UK</p>
-                    <p class="s-country">🌍 International</p>
+                    <p class="s-role">Professor, University of Glasgow, UK.</p>
+                    <p class="s-country"><img alt="UK flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/gb.png"
+                            srcset="https://flagcdn.com/40x30/gb.png 2x, https://flagcdn.com/60x45/gb.png 3x"
+                            width="20" /> UK</p>
                 </div>
-                <!-- 23 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Ramray Bhat.jpg" alt="Ramray Bhat" />
+
+                <div class="speaker-card reveal reveal-delay-1">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Ramray Bhat" src="assets/speakers/Ramray-Bhat.jpg" />
                     </div>
                     <h4 class="s-name">Ramray Bhat</h4>
-                    <p class="s-institution">IISc, Bangalore</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Associate Professor, IISc, Bangalore</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 24 -->
-                <div class="speaker-card reveal reveal-delay-4">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Ravi Kannan.jpg" alt="Ravi Kannan" />
-                    </div> -->
-                    <h4 class="s-name">Ravi Kannan</h4>
-                    <p class="s-institution">CCHRC, Assam</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
-                <!-- 26 -->
+
                 <div class="speaker-card reveal reveal-delay-2">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Saran Kumar.jpg" alt="Saran Kumar" />
+                        <img src="assets/speakers/Ravi-Kannan.jpg" alt="Ravi Kannan" />
+                    </div>
+                    <h4 class="s-name">Ravi Kannan</h4>
+                    <p class="s-role">Director, CCHRC, Assam</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
+                </div>
+
+                <div class="speaker-card reveal reveal-delay-3">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Saran Kumar" src="assets/speakers/Saran-Kumar.jpg" />
                     </div>
                     <h4 class="s-name">Saran Kumar</h4>
-                    <p class="s-institution">IIT, New Delhi</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Assistant Professor, IIT Delhi</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 28 -->
+
                 <div class="speaker-card reveal reveal-delay-4">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
+                        <img src="assets/speakers/Sathees-Raghavan.jpg" alt="Sathees. C. Raghavan" />
                     </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Sathees. C. Raghavan.jpg" alt="Sathees. C. Raghavan" />
-                    </div> -->
                     <h4 class="s-name">Sathees. C. Raghavan</h4>
-                    <p class="s-institution">IISc, Bangalore</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Professor, IISc, Bangalore</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 31 -->
-                <div class="speaker-card reveal reveal-delay-3">
+
+                <div class="speaker-card reveal reveal-delay-1">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
+                        <img src="assets/speakers/Shamik-Sen.jpg" alt="Shamik Sen" />
                     </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Shamik Sen.jpg" alt="Shamik Sen" />
-                    </div> -->
                     <h4 class="s-name">Shamik Sen</h4>
-                    <p class="s-institution">IIT, Bombay</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Professor, IIT, Bombay</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 32 -->
-                <div class="speaker-card reveal reveal-delay-4">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Sharath C. Arandkar.jpg" alt="Sharath C. Arandkar" />
+
+                <div class="speaker-card reveal reveal-delay-2">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Sharath C. Arandkar" src="assets/speakers/Sharath-Arandkar.jpg" />
                     </div>
                     <h4 class="s-name">Sharath C. Arandkar</h4>
-                    <p class="s-institution">ACTREC, Mumbai</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Assistant Professor, ACTREC, Mumbai, Maharashtra</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 33 -->
-                <div class="speaker-card reveal reveal-delay-1">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Sharmila Bapat.jpg" alt="Sharmila Bapat" />
+
+                <div class="speaker-card reveal reveal-delay-3">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Sharmila Bapat" src="assets/speakers/Sharmila-Bapat.jpg" />
                     </div>
                     <h4 class="s-name">Sharmila Bapat</h4>
-                    <p class="s-institution">NCCS, Pune</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Professor, NCCS, Pune</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 34 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Sivaprakash Ramalingam.jpg" alt="Sivaprakash Ramalingam" />
+
+                <div class="speaker-card reveal reveal-delay-4">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Sivaprakash Ramalingam" src="assets/speakers/Sivaprakash-Ramalingam.jpg" />
                     </div>
                     <h4 class="s-name">Sivaprakash Ramalingam</h4>
-                    <p class="s-institution">IIT Kanpur</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Associate Professor, IIT Kanpur</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 36 -->
-                <div class="speaker-card reveal reveal-delay-4">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Stephen Tait.jpg" alt="Stephen Tait" />
-                    </div> -->
-                    <h4 class="s-name">Stephen Tait</h4>
-                    <p class="s-institution">CRUK Beatson Institute, UK</p>
-                    <p class="s-country">🌍 International</p>
-                </div>
-                <!-- 37 -->
+
                 <div class="speaker-card reveal reveal-delay-1">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Sudeep Gupta.jpg" alt="Sudeep Gupta" />
+                        <img src="assets/speakers/Srikala-Ragavan.jpg" alt="Srikala-Ragavan" />
+                    </div>
+                    <h4 class="s-name">Srikala Ragavan</h4>
+                    <p class="s-role">Professor, CRUK Scotland Institute</p>
+                    <p class="s-country"><img alt="UK flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/gb.png"
+                            srcset="https://flagcdn.com/40x30/gb.png 2x, https://flagcdn.com/60x45/gb.png 3x"
+                            width="20" /> UK</p>
+                </div>
+
+                <div class="speaker-card reveal reveal-delay-2">
+                    <div class="avatar-sm" aria-label="Speaker placeholder">
+                        <img src="assets/speakers/Stephen-Tait.jpg" alt="Stephen Tait" />
+                    </div>
+                    <h4 class="s-name">Stephen Tait</h4>
+                    <p class="s-role">Professor and Deputy Director, CRUK Beatson Institute, UK</p>
+                    <p class="s-country"><img alt="UK flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/gb.png"
+                            srcset="https://flagcdn.com/40x30/gb.png 2x, https://flagcdn.com/60x45/gb.png 3x"
+                            width="20" /> UK</p>
+                </div>
+
+                <div class="speaker-card reveal reveal-delay-3">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Sudeep Gupta" src="assets/speakers/Sudeep-Gupta.jpg" />
                     </div>
                     <h4 class="s-name">Sudeep Gupta</h4>
-                    <p class="s-institution">ACTREC, Mumbai</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
+                    <p class="s-role">Director, ACTREC, Mumbai</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 38 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Suresh K. Rayala.jpg" alt="Suresh K. Rayala" />
-                    </div> -->
-                    <h4 class="s-name">Suresh K. Rayala</h4>
-                    <p class="s-institution">IIT Madras, Chennai</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
-                <!-- 39 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
-                    </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Swarnendu Bag.jpg" alt="Swarnendu Bag" />
-                    </div> -->
-                    <h4 class="s-name">Swarnendu Bag</h4>
-                    <p class="s-institution">IGIB, New Delhi</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
-                    </p>
-                </div>
-                <!-- 40 -->
+
                 <div class="speaker-card reveal reveal-delay-4">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Vidhya M Ravi.jpg" alt="Vidhya M Ravi" />
+                        <img src="assets/speakers/Swarnendu-Bag.jpg" alt="Swarnendu Bag" />
                     </div>
-                    <h4 class="s-name">Vidhya M Ravi</h4>
-                    <p class="s-institution">University of Freiburg, Germany</p>
-                    <p class="s-country">🌍 International</p>
+                    <h4 class="s-name">Swarnendu Bag</h4>
+                    <p class="s-role">Scientist, IGIB, New Delhi</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
                 </div>
-                <!-- 42 -->
-                <div class="speaker-card reveal reveal-delay-2">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="25" cy="18" r="10" fill="rgba(39,83,156,0.5)" stroke="rgba(39,83,156,0.8)"
-                                stroke-width="1" />
-                            <ellipse cx="25" cy="40" rx="15" ry="10" fill="rgba(39,83,156,0.4)"
-                                stroke="rgba(39,83,156,0.7)" stroke-width="1" />
-                        </svg>
+
+                <div class="speaker-card reveal reveal-delay-1">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Vidhya M Ravi" src="assets/speakers/Vidhya-Ravi.jpg" />
                     </div>
-                    <!-- <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Vinod Scaria.jpg" alt="Vinod Scaria" />
-                    </div> -->
-                    <h4 class="s-name">Vinod Scaria</h4>
-                    <p class="s-institution">Karkinos Healthcare, Mumbai</p>
-                    <p class="s-country">
-                        <img src="./assets/indian_flag.png" alt="India flag" class="country-flag" /> India
+                    <h4 class="s-name">Vidhya Madapusi Ravi</h4>
+                    <p class="s-role">Principal Investigator, Medical Center - University of Freiburg</p>
+                    <p class="s-country"><img alt="Germany flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/de.png"
+                            srcset="https://flagcdn.com/40x30/de.png 2x, https://flagcdn.com/60x45/de.png 3x"
+                            width="20" /> Germany
                     </p>
                 </div>
-                <!-- 43 -->
-                <div class="speaker-card reveal reveal-delay-3">
+
+                <div class="speaker-card reveal reveal-delay-2">
                     <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Volker Dötsch.jpg" alt="Volker Dötsch" />
+                        <img src="assets/speakers/Vinod-Scaria.jpg" alt="Vinod Scaria" />
+                    </div>
+                    <h4 class="s-name">Vinod Scaria</h4>
+                    <p class="s-role">Adjunct Professor, IIT Kanpur</p>
+                    <p class="s-country"><img alt="India flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/in.png"
+                            srcset="https://flagcdn.com/40x30/in.png 2x, https://flagcdn.com/60x45/in.png 3x"
+                            width="20" /> India</p>
+                </div>
+
+                <div class="speaker-card reveal reveal-delay-3">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Volker Dötsch" src="assets/speakers/Volker-Dötsch.jpg" />
                     </div>
                     <h4 class="s-name">Volker Dötsch</h4>
-                    <p class="s-institution">Goethe University Frankfurt, Germany</p>
-                    <p class="s-country">🌍 International</p>
+                    <p class="s-role">Professor, University of Frankfurt</p>
+                    <p class="s-country"><img alt="Germany flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/de.png"
+                            srcset="https://flagcdn.com/40x30/de.png 2x, https://flagcdn.com/60x45/de.png 3x"
+                            width="20" /> Germany
+                    </p>
                 </div>
-                <!-- 44 -->
-                <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Yoav Shaul.jpg" alt="Yoav Shaul" />
+
+                <div class="speaker-card reveal reveal-delay-4">
+                    <div aria-label="Speaker placeholder" class="avatar-sm">
+                        <img alt="Yoav Shaul" src="assets/speakers/Yoav-Shaul.jpg" />
                     </div>
                     <h4 class="s-name">Yoav Shaul</h4>
-                    <p class="s-institution">Hebrew University Med School, Israel</p>
-                    <p class="s-country">🌍 International</p>
+                    <p class="s-role">Professor, The Institute for Medical Research Israel-Canada</p>
+                    <p class="s-country"><img alt="Israel flag" class="country-flag" height="15"
+                            src="https://flagcdn.com/20x15/il.png"
+                            srcset="https://flagcdn.com/40x30/il.png 2x, https://flagcdn.com/60x45/il.png 3x"
+                            width="20" /> Israel</p>
                 </div>
-                <!-- 44 -->
-                <!-- <div class="speaker-card reveal reveal-delay-3">
-                    <div class="avatar-sm" aria-label="Speaker placeholder">
-                        <img src="assets/speakers/Tej Mallu A.C.jpg" alt="Tej Mallu A.C." />
-                    </div>
-                    <h4 class="s-name">Srikala Raghavan</h4>
-                    <p class="s-institution">University of Glasgow, UK</p>
-                    <p class="s-country">🌍 International</p>
-                </div> -->
             </div>
         </div>
-
         <!-- <div class="more-speakers-note reveal">
         <p>Additional keynote and invited speakers will be announced progressively. Stay tuned for speaker updates.</p>
         <a href="#contact" class="btn btn-outline" id="speaker-nominate-btn">
@@ -694,10 +605,8 @@
         </a>
       </div> -->
     </section>
-
     <!-- divider -->
     <div class="divider"></div>
-
     <!-- ============================================================
        FOOTER
        ============================================================ -->
@@ -708,11 +617,11 @@
                     <!-- Brand -->
                     <div class="footer-brand">
                         <div class="brand-logo">
-                            <img src="assets/iccb27-logo.webp"
-                                alt="ICCB 2027 - International Conference on Cancer Biology" id="hero-logo-img" onerror="
+                            <img alt="ICCB 2027 - International Conference on Cancer Biology" id="hero-logo-img"
+                                onerror="
                 this.style.display='none';
                 document.getElementById('hero-logo-svg').style.display='block';
-              " />
+              " src="assets/iccb27-logo.webp" />
                         </div>
                         <p class="brand-name">ICCB 2027</p>
                         <p class="brand-sub">
@@ -727,7 +636,6 @@
               <a href="#" class="social-btn" aria-label="YouTube" role="listitem" id="footer-yt">▶</a>
             </div> -->
                     </div>
-
                     <!-- Quick Links: Conference -->
                     <div class="footer-col">
                         <h4>Conference</h4>
@@ -739,7 +647,6 @@
                             <li><a href="./index.html#timeline">Important Dates</a></li>
                         </ul>
                     </div>
-
                     <!-- Quick Links: Participate -->
                     <div class="footer-col">
                         <h4>Participate</h4>
@@ -751,7 +658,6 @@
                             <li><a href="./index.html#faq">FAQs</a></li>
                         </ul>
                     </div>
-
                     <!-- Quick Links: Information -->
                     <div class="footer-col">
                         <h4>Information</h4>
@@ -766,7 +672,6 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-inner">
@@ -776,12 +681,10 @@
             </div>
         </div>
     </footer>
-
     <!-- Back to Top -->
-    <button id="back-to-top" aria-label="Scroll back to top" title="Back to top">↑</button>
-
+    <button aria-label="Scroll back to top" id="back-to-top" title="Back to top">↑</button>
     <!-- JavaScript -->
-    <script src="script.js" defer></script>
+    <script defer="" src="script.js"></script>
 </body>
 
 </html>
