@@ -2544,6 +2544,14 @@ button {
   color: var(--dna-gold);
 }
 
+.tl-day sup{
+  font-family: var(--font-numbers);
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--dna-gold);
+}
+
 /* ============================================================
    MONTH
    ============================================================ */
