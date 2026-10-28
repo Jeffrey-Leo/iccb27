@@ -62,6 +62,7 @@
         <a href="#themes" role="menuitem">Themes</a>
         <a href="./organizing_committee.html" role="menuitem">Committee</a>
         <!-- <a href="#venue" role="menuitem">Venue</a> -->
+        <a href="#food-accommodation" role="menuitem">Food and Accommodation</a>
         <a href="#timeline" role="menuitem">Timeline</a>
         <!-- <a href="#sponsors" role="menuitem">Sponsors</a> -->
         <a href="#contact" role="menuitem">Contact</a>
@@ -85,6 +86,7 @@
     <a href="#themes" role="menuitem">Themes</a>
     <a href="./organizing_committee.html" role="menuitem">Committee</a>
     <!-- <a href="#venue" role="menuitem">Venue</a> -->
+    <a href="#food-accommodation" role="menuitem">Food and Accommodation</a>
     <a href="#timeline" role="menuitem">Timeline</a>
     <a href="#faq" role="menuitem">FAQ</a>
     <a href="#contact" role="menuitem">Contact</a>
@@ -193,15 +195,16 @@
          ======================================================== -->
 
       <div class="hero-actions">
-        <a href="#register" class="btn btn-primary btn-lg" id="hero-register-btn">
+        <a href="https://conf.code.iitm.ac.in/conf/Cancer_Biology" target="_blank" class="btn btn-primary btn-lg"
+          id="hero-register-btn">
           <span class="btn-icon" aria-hidden="true"> ✦ </span>
-          Register Now
+          Register Now / Submit Abstract
         </a>
 
-        <a href="#" class="btn btn-outline btn-lg" id="hero-abstract-btn">
+        <!-- <a href="#" class="btn btn-outline btn-lg" id="hero-abstract-btn">
           <span class="btn-icon" aria-hidden="true"> ⬇ </span>
-          Submit Abstract
-        </a>
+          
+        </a> -->
 
         <!-- <a href="#" class="btn btn-outline btn-lg" id="hero-brochure-btn" aria-label="Download conference brochure">
           <span class="btn-icon" aria-hidden="true"> ⬇ </span>
@@ -273,10 +276,10 @@
        ============================================================ -->
   <section id="about" class="section" aria-label="About the conference">
     <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">A Premier Forum for <span class="gold">Cancer Research</span></h2>
-            <div class="section-divider"></div>
-          </div>
+      <div class="section-header">
+        <h2 class="section-title">A Premier Forum for <span class="gold">Cancer Research</span></h2>
+        <div class="section-divider"></div>
+      </div>
       <div class="about-grid">
         <!-- Left: Content -->
         <div class="about-content reveal-left">
@@ -314,8 +317,7 @@
               <div class="iccb-themes__stage" aria-label="Interactive scientific themes visualization">
                 <div class="iccb-themes__dna">
                   <canvas class="iccb-themes__canvas" id="iccb-themes-canvas" tabindex="0"
-                    aria-label="Animated DNA double helix visualization for scientific themes."
-                    role="img"></canvas>
+                    aria-label="Animated DNA double helix visualization for scientific themes." role="img"></canvas>
                 </div>
 
                 <button class="iccb-theme-card" type="button" data-theme="0" aria-pressed="false">
@@ -683,13 +685,61 @@
         </div>
         <div class="venue-card reveal reveal-delay-3">
           <div class="venue-card-icon" aria-hidden="true">🏨</div>
-          <h4 class="venue-card-title">On-Campus Stay</h4>
+          <h4 class="venue-card-title">Shared Hostel Stay</h4>
           <p class="venue-card-desc">
-            Comfortable guest house accommodations available on campus for international delegates, with easy
-            access to all conference venues.
+            Shared hostel accommodation will be available for participants. Charges and booking details will be
+            announced soon.
           </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- divider -->
+  <div class="divider"></div>
+
+  <!-- ============================================================
+       FOOD AND ACCOMMODATION
+       ============================================================ -->
+  <section id="food-accommodation" class="section" aria-label="Food and accommodation">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Food and <span class="gold">Accommodation</span></h2>
+        <p class="section-subtitle">
+          Essential details to help you plan your participation at ICCB 2027.
+        </p>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="food-accommodation-grid">
+        <!-- <article class="venue-card food-accommodation-card reveal reveal-delay-1">
+          <div class="venue-card-icon" aria-hidden="true"><i class="fa-solid fa-utensils"></i></div>
+          <h3 class="venue-card-title">Food</h3>
+          <p class="venue-card-desc">
+            The registration fee includes lunch for all three days of the conference.
+          </p>
+        </article> -->
+
+        <article class="venue-card food-accommodation-card accommodation-card reveal reveal-delay-2">
+          <div class="venue-card-icon" aria-hidden="true"><i class="fa-solid fa-utensils"></i></div>
+          <span class="accommodation-update">Food</span>
+          <p class="venue-card-desc">
+            The registration fee includes lunch for all three days of the conference.
+          </p>
+        </article>
+
+        <article class="venue-card food-accommodation-card accommodation-card reveal reveal-delay-2">
+          <div class="venue-card-icon" aria-hidden="true"><i class="fa-solid fa-bed"></i></div>
+          <span class="accommodation-update">Accommodation</span>
+          <!-- <h3 class="venue-card-title">Accommodation</h3> -->
+          <p class="venue-card-desc">
+            Shared hostel accommodation will be available for participants at an additional cost. The
+            accommodation charges and booking details will be announced soon.
+          </p>
+        </article>
+      </div>
+      <p class="accommodation-note"><span class="gold"><b>Note: </b></span>Participants are encouraged to plan their
+        stay in advance.</p>
     </div>
   </section>
 
@@ -996,7 +1046,7 @@
                 </span>
               </div>
               <div class="tl-date">
-                <span class="tl-day">1<sup>st</sup></span>
+                <span class="tl-day">10<sup>st</sup></span>
                 <span class="tl-month">DECEMBER</span>
                 <span class="tl-year">2026</span>
               </div>
@@ -1313,14 +1363,14 @@
 
         <div class="faq-item reveal reveal-delay-4">
           <div class="faq-question" tabindex="0" role="button" aria-expanded="false">
-            Is accommodation available on campus?
+            Will accommodation be available?
             <span class="faq-icon" aria-hidden="true">+</span>
           </div>
           <div class="faq-answer">
             <p>
-              Yes, limited on-campus accommodation is available for international delegates at the IIT Madras
-              guest house. A list of nearby hotels and partner accommodations in Chennai will be provided in
-              the conference brochure. We recommend booking early.
+              Shared hostel accommodation will be available for participants at an additional cost. The
+              accommodation charges and booking details will be announced soon. Participants are encouraged to
+              plan their stay in advance.
             </p>
           </div>
         </div>
@@ -1401,17 +1451,16 @@
         </p>
         <div class="section-divider"></div>
       </div>
+      <div class="contact-info">
+        <h3>Hyundai Centre for Cancer Genomics</h3>
+        <p class="sub-org">National Cancer Tissue Biobank</p>
+        <p class="dept">Department of Biotechnology</p>
+        <p class="institution">Indian Institute of Technology Madras</p>
+      </div>
 
       <div class="contact-grid">
         <!-- Contact Info -->
         <div class="reveal-left">
-          <div class="contact-info">
-            <h3>Hyundai Centre for Cancer Genomics</h3>
-            <p class="sub-org">National Cancer Tissue Biobank</p>
-            <p class="dept">Department of Biotechnology</p>
-            <p class="institution">Indian Institute of Technology Madras</p>
-          </div>
-
           <div class="contact-items">
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">📧</div>
@@ -1428,13 +1477,16 @@
                 <p class="c-value">044-22575108</p>
               </div>
             </div>
-
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="contact-items">
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">📍</div>
               <div class="contact-text">
                 <p class="c-label">Address</p>
                 <p class="c-value">
-                  Dept. of Biotechnology, IIT Madras<br />Chennai – 600 036, Tamil Nadu, India
+                  Dept. of Biotechnology, IIT Madras, Chennai – 600 036, Tamil Nadu, India
                 </p>
               </div>
             </div>
@@ -1451,7 +1503,7 @@
         </div>
 
         <!-- Contact Form -->
-        <div class="contact-form-card reveal-right">
+        <!-- <div class="contact-form-card reveal-right">
           <h3>Send Us a Message</h3>
           <form id="contact-form" novalidate>
             <div class="form-group">
@@ -1463,19 +1515,6 @@
               <input type="email" id="cf-email" name="email" placeholder="jane.smith@university.edu" required
                 autocomplete="email" />
             </div>
-            <!-- <div class="form-group">
-              <label for="cf-category">Enquiry Type</label>
-              <select id="cf-category" name="category">
-                <option value="">Select an enquiry type...</option>
-                <option value="registration">Registration</option>
-                <option value="abstract">Abstract Submission</option>
-                <option value="sponsorship">Sponsorship</option>
-                <option value="accommodation">Accommodation</option>
-                <option value="speaker">Speaker Nomination</option>
-                <option value="visa">Visa Support Letter</option>
-                <option value="other">Other</option>
-              </select>
-            </div> -->
             <div class="form-group">
               <label for="cf-message">Message *</label>
               <textarea id="cf-message" name="message" placeholder="Please describe your enquiry..."
@@ -1487,7 +1526,7 @@
               Send Message
             </button>
           </form>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -1541,8 +1580,8 @@
           <div class="footer-col">
             <h4>Participate</h4>
             <ul>
-              <li><a href="#register">Register Now</a></li>
-              <li><a href="#register">Submit Abstract</a></li>
+              <li><a href="#register">Register Now / Submit Abstract</a></li>
+              <li><a href="#food-accommodation">Food and Accommodation</a></li>
               <!-- <li><a href="#sponsors">Sponsorship</a></li> -->
               <li><a href="./organizing_committee.html">Committee</a></li>
               <li><a href="#faq">FAQs</a></li>

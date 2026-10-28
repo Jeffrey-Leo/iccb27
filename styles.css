@@ -2075,6 +2075,37 @@ button {
   line-height: 1.6;
 }
 
+#food-accommodation {
+  background: linear-gradient(180deg, #0d0618 0%, #0e2361 50%, #0d0618 100%);
+}
+
+.food-accommodation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.food-accommodation-card {
+  padding: 30px 28px;
+}
+
+.accommodation-card {
+  border-color: rgba(214, 178, 76, 0.35);
+  background: linear-gradient(145deg, rgba(214, 178, 76, 0.09), var(--glass-bg-blue));
+}
+
+.accommodation-update {
+  display: inline-block;
+  margin: 0 0 10px;
+  color: var(--dna-gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 /* ============================================================
    ABOUT CHENNAI
    ============================================================ */
@@ -2544,7 +2575,7 @@ button {
   color: var(--dna-gold);
 }
 
-.tl-day sup{
+.tl-day sup {
   font-family: var(--font-numbers);
   font-size: 0.75rem;
   line-height: 1;
@@ -3031,11 +3062,17 @@ button {
   margin-bottom: 18px;
 }
 
-.register-content p {
+.register-content p,
+.accommodation-note {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.72);
   margin-bottom: 34px;
   line-height: 1.7;
+}
+
+.accommodation-note {
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .register-actions {
@@ -3229,7 +3266,7 @@ button {
 
 .contact-text .c-value {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-white);
 }
 
@@ -4000,6 +4037,10 @@ button {
   }
 
   .venue-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .food-accommodation-grid {
     grid-template-columns: 1fr;
   }
 
